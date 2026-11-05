@@ -83,7 +83,7 @@ export default async function Home() {
           <div className="relative mx-auto h-[520px] w-full max-w-[540px] sm:h-[600px] lg:h-[660px]">
             {/* gold outline arch, offset behind the main image */}
             <div className="absolute right-[2%] top-[2%] h-[86%] w-[68%] rounded-[18px] border border-gold/50" />
-            <div className="absolute right-[7%] top-[6%] h-[86%] w-[68%] overflow-hidden rounded-[18px] bg-sand shadow-[0_30px_80px_-30px_rgba(28,26,23,0.35)]">
+            <div className="absolute right-[7%] top-[6%] h-[86%] w-[68%] overflow-hidden rounded-[18px] bg-sand shadow-[0_30px_80px_-30px_rgba(17,17,17,0.3)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/hero/pearl-beaded-bag.webp" alt="Aurica pearl-beaded evening bag" className="h-full w-full object-cover" fetchPriority="high" />
             </div>

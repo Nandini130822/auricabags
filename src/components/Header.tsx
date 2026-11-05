@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
+import { Heart, Menu, Search, ShoppingBag, X } from "lucide-react";
+import { AccountMenu } from "./AccountMenu";
 import { Logo } from "./Logo";
 import { useCart } from "./CartProvider";
 import type { Category } from "@/lib/types";
@@ -16,7 +17,17 @@ const NAV = [
   { href: "/wholesale", label: "Wholesale" },
 ];
 
-export function Header({ categories, signedIn }: { categories: Category[]; signedIn: boolean }) {
+export function Header({
+  categories,
+  signedIn,
+  userName = null,
+  isAdmin = false,
+}: {
+  categories: Category[];
+  signedIn: boolean;
+  userName?: string | null;
+  isAdmin?: boolean;
+}) {
   const path = usePathname();
   const router = useRouter();
   const { count, setOpen } = useCart();
@@ -71,9 +82,7 @@ export function Header({ categories, signedIn }: { categories: Category[]; signe
             <Link href={signedIn ? "/account/wishlist" : "/login"} aria-label="Wishlist" className="hidden p-2 sm:block">
               <Heart className="h-[19px] w-[19px]" strokeWidth={1.5} />
             </Link>
-            <Link href={signedIn ? "/account" : "/login"} aria-label="Account" className="p-2.5 sm:p-2">
-              <User className="h-[19px] w-[19px]" strokeWidth={1.5} />
-            </Link>
+            <AccountMenu name={signedIn ? (userName ?? "") : null} isAdmin={isAdmin} />
             <button onClick={() => setOpen(true)} aria-label="Open bag" className="relative -mr-2 p-2.5 sm:mr-0 sm:p-2">
               <ShoppingBag className="h-[19px] w-[19px]" strokeWidth={1.5} />
               {count > 0 && (

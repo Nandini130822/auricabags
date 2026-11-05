@@ -7,7 +7,7 @@ import { discountPct, inr } from "@/lib/format";
 import type { Product } from "@/lib/types";
 
 const SWATCH: Record<string, string> = {
-  champagne: "#e8d6b5", silver: "#c9c9cb", "rose pink": "#e9b9c0", ivory: "#f4ecdc", black: "#1c1a17", bronze: "#9b6a3c",
+  champagne: "#e8d6b5", silver: "#c9c9cb", "rose pink": "#e9b9c0", ivory: "#f4ecdc", black: "#111111", bronze: "#9b6a3c",
   gold: "#c9a45c", maroon: "#6d1f2a", emerald: "#1f6b52", "rani pink": "#d23a7a", rouge: "#a8262c", beige: "#d9c4a4",
   saffron: "#e8a530", lilac: "#b9a3d0", blush: "#efc5c0", grey: "#9b9a98", tan: "#c19066", "rose gold": "#d5a38c",
   cognac: "#8a4b26", "pearl white": "#f3efe8",

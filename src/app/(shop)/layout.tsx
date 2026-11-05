@@ -2,14 +2,15 @@ import { CartProvider } from "@/components/CartProvider";
 import { CartDrawer } from "@/components/CartDrawer";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { getCategories, getSessionUser } from "@/lib/data";
+import { getCategories, getIsAdmin, getSessionUser } from "@/lib/data";
 import { isSupabaseConfigured } from "@/lib/config";
 
 export default async function ShopLayout({ children }: { children: React.ReactNode }) {
-  const [categories, user] = await Promise.all([getCategories(), getSessionUser()]);
+  const [categories, user, isAdmin] = await Promise.all([getCategories(), getSessionUser(), getIsAdmin()]);
+  const userName = user ? user.profile?.full_name || user.email.split("@")[0] : null;
   return (
     <CartProvider>
-      <Header categories={categories} signedIn={Boolean(user)} />
+      <Header categories={categories} signedIn={Boolean(user)} userName={userName} isAdmin={Boolean(user) && isAdmin} />
       <main>{children}</main>
       <Footer />
       <CartDrawer />
