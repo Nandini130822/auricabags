@@ -36,7 +36,7 @@ export function AccountMenu({ name, isAdmin }: { name: string | null; isAdmin: b
       </Link>
     );
 
-  const first = name.trim().split(/\s+/)[0] || "there";
+  const first = name.trim().split(/\s+/)[0];
   const items = [
     { href: "/account", label: "My account", icon: LayoutGrid },
     { href: "/account/orders", label: "My orders", icon: Package },
@@ -53,12 +53,12 @@ export function AccountMenu({ name, isAdmin }: { name: string | null; isAdmin: b
         className="flex items-center gap-2 p-2.5 sm:p-2"
       >
         <User className="h-[19px] w-[19px]" strokeWidth={1.5} />
-        <span className="hidden max-w-[120px] truncate text-[13px] lg:inline">Hi, {first}</span>
+        <span className="hidden max-w-[120px] truncate text-[13px] lg:inline">{first ? `Hi, ${first}` : "My account"}</span>
         <ChevronDown className={`hidden h-3.5 w-3.5 transition lg:block ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
         <div className="absolute right-0 top-full z-50 mt-2 w-56 overflow-hidden rounded-2xl border border-line bg-white py-2 shadow-[0_20px_50px_-20px_rgba(17,17,17,0.35)]">
-          <p className="px-4 pb-2 pt-1 text-[11px] uppercase tracking-[0.18em] text-muted">Signed in as {first}</p>
+          <p className="px-4 pb-2 pt-1 text-[11px] uppercase tracking-[0.18em] text-muted">{first ? `Signed in as ${first}` : "Your account"}</p>
           {items.map((it) => (
             <Link key={it.href} href={it.href} className={`flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-cream ${it.href === "/admin" ? "text-gold-deep" : ""}`}>
               <it.icon className="h-4 w-4" strokeWidth={1.5} /> {it.label}

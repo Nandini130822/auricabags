@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Jost, Marcellus } from "next/font/google";
+import { Bodoni_Moda, Jost, Marcellus } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/config";
 
+// Body text
 const jost = Jost({ subsets: ["latin"], variable: "--font-jost", weight: ["300", "400", "500", "600"] });
+// Logo wordmark only (matches the Aurica logo lettering)
 const marcellus = Marcellus({ subsets: ["latin"], variable: "--font-marcellus", weight: "400" });
-const cormorant = Cormorant_Garamond({
+// Headings + italic accents: high-contrast fashion serif, with optical sizing for small sizes
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
-  variable: "--font-cormorant",
-  weight: ["400", "500"],
+  variable: "--font-bodoni",
   style: ["normal", "italic"],
+  axes: ["opsz"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jost.variable} ${marcellus.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${jost.variable} ${marcellus.variable} ${bodoni.variable}`}>
       <body className="min-h-screen">{children}</body>
     </html>
   );

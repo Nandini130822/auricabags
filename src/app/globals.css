@@ -9,15 +9,17 @@
   --color-ink: #111111;        /* text, buttons, footer: black */
   --color-ink-2: #2a2a2a;
   --color-muted: #6b6b6b;      /* body copy: neutral grey */
-  --color-gold: #c4a052;       /* bright gold */
-  --color-gold-deep: #a9832b;  /* gold for text accents (italics, labels) */
-  --color-gold-soft: #e6cf96;
+  /* Accent: deep wine (token names kept as "gold" so every component picks it up) */
+  --color-gold: #9c3a55;       /* wine — lines, fills, frames */
+  --color-gold-deep: #7b1e3a;  /* deep wine — italic accents, labels, banner */
+  --color-gold-soft: #ecc9d3;  /* blush — highlights on dark backgrounds */
   --color-line: rgb(17 17 17 / 0.1);
   --color-rose: #b4574a;
 
   --font-sans: var(--font-jost), system-ui, sans-serif;
-  --font-display: var(--font-marcellus), "Times New Roman", serif;
-  --font-serif: var(--font-cormorant), "Times New Roman", serif;
+  --font-display: var(--font-bodoni), "Didot", "Times New Roman", serif;   /* Bodoni Moda */
+  --font-serif: var(--font-bodoni), "Didot", "Times New Roman", serif;     /* Bodoni Moda italic */
+  --font-logo: var(--font-marcellus), "Times New Roman", serif;
 
   --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
 

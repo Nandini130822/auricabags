@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Heart, LayoutGrid, LogOut, MapPin, Package, Shield, UserRound } from "lucide-react";
+import { Heart, LayoutGrid, LogOut, MapPin, Package, UserRound } from "lucide-react";
 import { signOut } from "@/app/actions/shop";
 
 const LINKS = [
@@ -12,7 +12,7 @@ const LINKS = [
   { href: "/account/profile", label: "Profile", icon: UserRound },
 ];
 
-export function AccountNav({ isAdmin }: { isAdmin: boolean }) {
+export function AccountNav() {
   const path = usePathname();
   return (
     <nav className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 lg:mx-0 lg:flex-col lg:gap-1 lg:px-0">
@@ -28,11 +28,6 @@ export function AccountNav({ isAdmin }: { isAdmin: boolean }) {
           </Link>
         );
       })}
-      {isAdmin && (
-        <Link href="/admin" className="flex shrink-0 items-center gap-3 rounded-full px-4 py-2.5 text-sm text-gold-deep hover:bg-cream lg:rounded-xl">
-          <Shield className="h-4 w-4" strokeWidth={1.5} /> Admin dashboard
-        </Link>
-      )}
       <form action={signOut}>
         <button className="flex shrink-0 items-center gap-3 rounded-full px-4 py-2.5 text-sm text-muted hover:bg-cream lg:w-full lg:rounded-xl">
           <LogOut className="h-4 w-4" strokeWidth={1.5} /> Sign out

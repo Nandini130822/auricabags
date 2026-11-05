@@ -15,7 +15,7 @@ export function Logo({ light = false, className = "" }: { light?: boolean; class
     <Link href="/" aria-label="Aurica Bags home" className={`flex min-w-0 items-center gap-2 sm:gap-2.5 ${light ? "text-ivory" : "text-ink"} ${className}`}>
       <BagMark className="h-6 w-6 shrink-0 text-gold sm:h-7 sm:w-7" />
       <span className="flex flex-col leading-none">
-        <span className="font-display text-[18px] tracking-[0.24em] sm:text-[22px] sm:tracking-[0.32em]">AURICA</span>
+        <span className="font-logo text-[18px] tracking-[0.24em] sm:text-[22px] sm:tracking-[0.32em]">AURICA</span>
         <span className="mt-1 text-[8px] uppercase tracking-[0.42em] opacity-60 sm:tracking-[0.5em]">Bags · Surat</span>
       </span>
     </Link>

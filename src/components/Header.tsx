@@ -86,7 +86,7 @@ export function Header({
             <button onClick={() => setOpen(true)} aria-label="Open bag" className="relative -mr-2 p-2.5 sm:mr-0 sm:p-2">
               <ShoppingBag className="h-[19px] w-[19px]" strokeWidth={1.5} />
               {count > 0 && (
-                <span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-gold px-1 text-[11px] font-medium text-ink">
+                <span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-gold-deep px-1 text-[11px] font-medium text-white">
                   {count}
                 </span>
               )}

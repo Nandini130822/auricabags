@@ -58,7 +58,7 @@ export function Sidebar({ badges }: { badges: Record<string, number> }) {
 
   const brand = (
     <Link href="/admin" className="flex items-baseline gap-2">
-      <span className="font-display text-xl tracking-[0.18em]">AURICA</span>
+      <span className="font-logo text-xl tracking-[0.18em]">AURICA</span>
       <span className="text-[10px] uppercase tracking-[0.2em] text-muted">Admin</span>
     </Link>
   );

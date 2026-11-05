@@ -91,12 +91,6 @@ export default async function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/products/gold-bow-clutch.webp" alt="Gold bow clutch" className="h-full w-full object-cover" />
             </div>
-            <div className="absolute left-[6%] top-[8%] flex h-24 w-24 items-center justify-center rounded-full bg-ink text-center text-ivory shadow-lg sm:h-28 sm:w-28">
-              <p className="font-serif text-[15px] italic leading-tight">
-                New<br />
-                <span className="font-display text-[11px] not-italic tracking-[0.28em]">SEASON</span>
-              </p>
-            </div>
             {hero && (
               <Link
                 href={`/product/${hero.slug}`}
@@ -149,14 +143,14 @@ export default async function Home() {
       </section>
 
       {/* ───────────── MARQUEE ───────────── */}
-      <div className="mt-10 bg-ink sm:mt-14 lg:mt-16">
+      <div className="mt-10 bg-gold-deep sm:mt-14 lg:mt-16">
         <div className="marquee group overflow-hidden py-4 sm:py-5" aria-label="Aurica promises">
           <div className="flex w-max animate-marquee items-center whitespace-nowrap group-hover:[animation-play-state:paused]">
             {Array.from({ length: 2 }).flatMap((_, k) =>
               ["Handcrafted in Surat", "Single piece & wholesale", "Cash on delivery", "Free shipping above ₹1,999", "Easy 7-day exchange", "Made for every celebration"].map((t) => (
                 <span key={t + k} className="flex items-center">
                   <span className="px-7 font-serif text-[20px] italic text-ivory sm:px-10 sm:text-[24px]">{t}</span>
-                  <span className="text-[13px] text-gold" aria-hidden>
+                  <span className="text-[13px] text-gold-soft" aria-hidden>
                     ✦
                   </span>
                 </span>
@@ -258,12 +252,6 @@ export default async function Home() {
             <div className="absolute bottom-0 right-0 h-[62%] w-[52%] overflow-hidden rounded-[18px] border-[10px] border-ivory">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img("/images/insta/gold-navratri-bag.webp", 700)} alt="Aurica gold Navratri sling" loading="lazy" className="h-full w-full object-cover" />
-            </div>
-            <div className="absolute bottom-8 left-6 flex h-32 w-32 items-center justify-center rounded-full bg-ink text-center text-ivory">
-              <p className="font-serif text-lg italic leading-tight">
-                Made in<br />
-                <span className="font-display not-italic tracking-[0.2em]">SURAT</span>
-              </p>
             </div>
           </Reveal>
           <Reveal className="order-1 lg:order-2" delay={120}>

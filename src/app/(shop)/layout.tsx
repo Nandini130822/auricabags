@@ -7,7 +7,7 @@ import { isSupabaseConfigured } from "@/lib/config";
 
 export default async function ShopLayout({ children }: { children: React.ReactNode }) {
   const [categories, user, isAdmin] = await Promise.all([getCategories(), getSessionUser(), getIsAdmin()]);
-  const userName = user ? user.profile?.full_name || user.email.split("@")[0] : null;
+  const userName = user ? (user.profile?.full_name ?? "") : null;
   return (
     <CartProvider>
       <Header categories={categories} signedIn={Boolean(user)} userName={userName} isAdmin={Boolean(user) && isAdmin} />

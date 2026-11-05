@@ -37,7 +37,7 @@ export function OrderProgress({ order }: { order: Order }) {
           <li key={s.key} className="flex flex-col items-center text-center">
             <div className="flex w-full items-center">
               <span className={`h-px flex-1 ${i === 0 ? "opacity-0" : done ? "bg-gold" : "bg-line"}`} />
-              <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border ${done ? "border-gold bg-gold text-ink" : "border-line bg-ivory text-muted"}`}>
+              <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border ${done ? "border-gold-deep bg-gold-deep text-white" : "border-line bg-ivory text-muted"}`}>
                 {done ? <Check className="h-4 w-4" /> : <span className="text-xs">{i + 1}</span>}
               </span>
               <span className={`h-px flex-1 ${i === STEPS.length - 1 ? "opacity-0" : i < idx ? "bg-gold" : "bg-line"}`} />

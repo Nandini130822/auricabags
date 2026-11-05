@@ -55,7 +55,7 @@ export function DemoPaymentModal({
           Test mode
         </div>
         <div className="flex items-center gap-3 bg-ink px-5 py-5 text-ivory">
-          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gold font-display text-xl text-ink">A</div>
+          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gold-deep font-display text-xl text-white">A</div>
           <div className="flex-1">
             <p className="font-medium">Aurica Bags</p>
             <p className="text-xs text-ivory/60">Order {order.orderNumber}</p>
