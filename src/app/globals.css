@@ -68,26 +68,16 @@ body {
   .field-label { @apply mb-1.5 block text-[11px] uppercase tracking-[0.2em] text-muted; }
 }
 
-/* ─── Clutch-clasp frame (see components/Clasp.tsx) ─── */
-.clasp { position: relative; --bar: 5px; --knob: 13px; padding-top: calc(var(--knob) * 0.75); }
-.clasp-lg { --bar: 8px; --knob: 18px; }
-.clasp > :last-child {
-  border-top: var(--bar) solid var(--color-gold);
-  border-radius: 6px 6px 14px 14px;
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.25);
+/* ─── Realistic frame-clutch clasp (components/FrameClasp.tsx) ─── */
+.frame-clasp > :last-child { border-radius: 4px 4px 18px 18px; }
+.frame-clasp .kl-left, .frame-clasp .kl-right {
+  transform-box: fill-box; transition: transform 0.6s var(--ease-lux);
 }
-.clasp-lg > :last-child { border-radius: 8px 8px 22px 22px; }
-.clasp-lock {
-  position: absolute; left: 50%; top: 0; z-index: 5; display: flex; gap: 1px;
-  transform: translateX(-50%); transition: gap 0.5s var(--ease-lux);
-}
-.clasp-lock i {
-  display: block; width: var(--knob); height: var(--knob); border-radius: 9999px;
-  background: radial-gradient(circle at 34% 30%, #fff4d8 0 14%, #d6b26e 38%, var(--color-gold) 62%, #7a5a2c 100%);
-  box-shadow: 0 0 0 1px #7a5a2c, 0 2px 3px rgb(28 26 23 / 0.35);
-}
-/* the clasp "opens" a little on hover */
-.group:hover .clasp-lock, .clasp:hover .clasp-lock { gap: calc(var(--knob) * 0.35); }
+.frame-clasp .kl-left { transform-origin: 70% 100%; }
+.frame-clasp .kl-right { transform-origin: 30% 100%; }
+/* the kiss-lock opens a little on hover */
+.group:hover .frame-clasp .kl-left { transform: rotate(-14deg); }
+.group:hover .frame-clasp .kl-right { transform: rotate(14deg); }
 
 /* Image hover zoom */
 .zoom-img { transition: transform 1.4s var(--ease-lux); }

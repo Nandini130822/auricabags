@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUpRight, Star } from "lucide-react";
 import { Instagram } from "@/components/InstagramIcon";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
-import { Clasp } from "@/components/Clasp";
+import { FrameClasp } from "@/components/FrameClasp";
 import { getCategories, getLatestReviews, getProducts } from "@/lib/data";
 import { img, inr } from "@/lib/format";
 import { SITE } from "@/lib/config";
@@ -83,19 +83,15 @@ export default async function Home() {
 
           <div className="relative mx-auto h-[520px] w-full max-w-[540px] sm:h-[600px] lg:h-[660px]">
             {/* gold outline arch, offset behind the main image */}
-            <div className="absolute right-[2%] top-[2%] h-[86%] w-[68%] rounded-[8px_8px_22px_22px] border border-gold/50" />
-            <Clasp size="lg" className="absolute right-[7%] top-[3%] flex h-[89%] w-[68%] flex-col">
-              <div className="min-h-0 flex-1 overflow-hidden bg-sand shadow-[0_30px_80px_-30px_rgba(28,26,23,0.35)]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img(U("1787284461013-e58abaed4f78"), 1100)} alt="Embroidered Aurica frame bags" className="h-full w-full object-cover" />
-              </div>
-            </Clasp>
-            <Clasp className="absolute bottom-[4%] left-0 flex h-[40%] w-[42%] flex-col">
-              <div className="min-h-0 flex-1 overflow-hidden bg-white shadow-xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img("/images/products/pearl-frame-clutch.webp", 700)} alt="Pearl frame clutch" className="h-full w-full object-cover" />
-              </div>
-            </Clasp>
+            <div className="absolute right-[2%] top-[2%] h-[86%] w-[68%] rounded-[18px] border border-gold/50" />
+            <div className="absolute right-[7%] top-[6%] h-[86%] w-[68%] overflow-hidden rounded-[18px] bg-sand shadow-[0_30px_80px_-30px_rgba(28,26,23,0.35)]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img(U("1787284461013-e58abaed4f78"), 1100)} alt="Embroidered Aurica frame bags" className="h-full w-full object-cover" />
+            </div>
+            <div className="absolute bottom-[4%] left-0 h-[38%] w-[42%] overflow-hidden rounded-[28px] border-[6px] border-ivory bg-sand shadow-xl">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img("/images/products/pearl-frame-clutch.webp", 700)} alt="Pearl frame clutch" className="h-full w-full object-cover" />
+            </div>
             <div className="absolute left-[6%] top-[8%] flex h-24 w-24 items-center justify-center rounded-full bg-ink text-center text-ivory shadow-lg sm:h-28 sm:w-28">
               <p className="font-serif text-[15px] italic leading-tight">
                 New<br />
@@ -166,8 +162,7 @@ export default async function Home() {
           {OCCASIONS.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80} className="shrink-0 snap-start">
               <Link href={`/shop?occasion=${o.slug}`} className="group block w-[72vw] sm:w-[340px]">
-                <Clasp>
-                <div className="relative aspect-[3/4.3] overflow-hidden bg-cream">
+                <div className="relative aspect-[3/4.3] overflow-hidden rounded-[18px] bg-cream">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={img(o.image, 700)} alt={o.title} loading="lazy" className="zoom-img h-full w-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
@@ -177,7 +172,6 @@ export default async function Home() {
                     <p className="mt-1 text-sm text-ivory/70">{o.sub}</p>
                   </div>
                 </div>
-                </Clasp>
               </Link>
             </Reveal>
           ))}
@@ -190,12 +184,10 @@ export default async function Home() {
           <Reveal className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
               <div className="group overflow-hidden rounded-[28px] bg-ivory shadow-[0_30px_80px_-40px_rgba(28,26,23,0.3)]">
-                <Clasp className="m-5 mb-0">
-                  <div className="aspect-[4/3.6] overflow-hidden bg-sand">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={img(U("1681747685985-a401c271156c"), 1000)} alt="The Aurica edit" className="zoom-img h-full w-full object-cover" />
-                  </div>
-                </Clasp>
+                <div className="aspect-[4/3.6] overflow-hidden rounded-[18px] bg-sand m-5 mb-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={img(U("1681747685985-a401c271156c"), 1000)} alt="The Aurica edit" className="zoom-img h-full w-full object-cover" />
+                </div>
                 <div className="p-8 sm:p-10">
                   <p className="eyebrow text-gold-deep">The Aurica Edit</p>
                   <p className="h-display mt-4 text-[42px] sm:text-[52px]">
@@ -226,18 +218,14 @@ export default async function Home() {
       <section className="py-24 lg:py-36">
         <div className="container-lux grid items-center gap-16 lg:grid-cols-2">
           <Reveal className="relative order-2 h-[520px] lg:order-1 lg:h-[640px]">
-            <Clasp size="lg" className="absolute left-0 top-0 flex h-[78%] w-[64%] flex-col">
-              <div className="min-h-0 flex-1 overflow-hidden bg-sand">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img(U("1713425885188-f1daa057691f"), 900)} alt="Aurica purses" loading="lazy" className="h-full w-full object-cover" />
-              </div>
-            </Clasp>
-            <Clasp className="absolute bottom-0 right-0 flex h-[62%] w-[52%] flex-col">
-              <div className="min-h-0 flex-1 overflow-hidden border-x-[8px] border-b-[8px] border-ivory bg-sand">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img(U("1784450691236-d970d91b58a9"), 700)} alt="Gold potli and heels" loading="lazy" className="h-full w-full object-cover" />
-              </div>
-            </Clasp>
+            <div className="absolute left-0 top-0 h-[78%] w-[64%] overflow-hidden rounded-[28px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img(U("1713425885188-f1daa057691f"), 900)} alt="Aurica purses" loading="lazy" className="h-full w-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 right-0 h-[62%] w-[52%] overflow-hidden rounded-[18px] border-[10px] border-ivory">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img(U("1784450691236-d970d91b58a9"), 700)} alt="Gold potli and heels" loading="lazy" className="h-full w-full object-cover" />
+            </div>
             <div className="absolute bottom-8 left-6 flex h-32 w-32 items-center justify-center rounded-full bg-ink text-center text-ivory">
               <p className="font-serif text-lg italic leading-tight">
                 Made in<br />
@@ -291,12 +279,12 @@ export default async function Home() {
               return (
                 <Reveal key={c.id} delay={i * 60}>
                   <Link href={`/shop?category=${c.slug}`} className="group block text-center">
-                    <Clasp>
+                    <FrameClasp uid={c.slug}>
                       <div className="aspect-[3/4] overflow-hidden bg-cream">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={img(c.image_url, 600)} alt={c.name} loading="lazy" className="zoom-img h-full w-full object-cover" />
                       </div>
-                    </Clasp>
+                    </FrameClasp>
                     <p className="mt-4 font-display text-[19px]">{c.name}</p>
                     <p className="text-[11px] uppercase tracking-[0.2em] text-muted">{count} pieces</p>
                   </Link>
@@ -348,13 +336,11 @@ export default async function Home() {
             </div>
           </div>
           <div className="relative mx-auto h-[340px] w-full max-w-[360px] lg:h-[420px]">
-            <div className="absolute inset-0 translate-x-3 -translate-y-1 rounded-[8px_8px_22px_22px] border border-gold/50" />
-            <Clasp size="lg" className="absolute inset-0 flex flex-col">
-              <div className="min-h-0 flex-1 overflow-hidden bg-sand">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img(U("1684407261522-48ad66a060e9"), 900)} alt="Aurica bags on boutique shelves" loading="lazy" className="h-full w-full object-cover" />
-              </div>
-            </Clasp>
+            <div className="absolute inset-0 translate-x-3 -translate-y-3 rounded-[18px] border border-gold/50" />
+            <div className="absolute inset-0 overflow-hidden rounded-[18px] bg-sand">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img(U("1684407261522-48ad66a060e9"), 900)} alt="Aurica bags on boutique shelves" loading="lazy" className="h-full w-full object-cover" />
+            </div>
           </div>
         </Reveal>
       </section>

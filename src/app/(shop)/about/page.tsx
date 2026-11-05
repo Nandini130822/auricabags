@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Clasp } from "@/components/Clasp";
 import { Reveal } from "@/components/Reveal";
 import { img } from "@/lib/format";
 
@@ -17,14 +16,8 @@ export default function About() {
         </h1>
       </section>
       <section className="container-lux grid gap-6 pb-20 md:grid-cols-12">
-        <Clasp size="lg" className="flex flex-col md:col-span-7">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <div className="min-h-0 flex-1 overflow-hidden bg-sand"><img src={img(U("1787284461013-e58abaed4f78"), 1200)} alt="" className="h-full w-full object-cover" /></div>
-        </Clasp>
-        <Clasp size="lg" className="flex flex-col md:col-span-5">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <div className="min-h-0 flex-1 overflow-hidden bg-sand"><img src={img(U("1784450691236-d970d91b58a9"), 800)} alt="" className="h-full w-full object-cover" /></div>
-        </Clasp>
+        <div className="overflow-hidden rounded-[28px] md:col-span-7"><img src={img(U("1787284461013-e58abaed4f78"), 1200)} alt="" className="h-full w-full object-cover" /></div>
+        <div className="overflow-hidden rounded-[18px] md:col-span-5"><img src={img(U("1784450691236-d970d91b58a9"), 800)} alt="" className="h-full w-full object-cover" /></div>
       </section>
       <section className="container-lux grid gap-16 pb-28 lg:grid-cols-2">
         <Reveal>

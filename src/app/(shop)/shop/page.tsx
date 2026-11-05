@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Clasp } from "@/components/Clasp";
 import { ProductCard } from "@/components/ProductCard";
 import { SortSelect } from "@/components/SortSelect";
 import { getCategories, getProducts, type ProductFilter } from "@/lib/data";
@@ -54,12 +53,10 @@ export default async function Shop({ searchParams }: { searchParams: Promise<SP>
             <p className="mt-5 max-w-lg text-muted">{desc}</p>
           </div>
           {cat?.image_url && (
-            <Clasp className="hidden w-36 lg:block">
-              <div className="h-44 overflow-hidden bg-cream">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img(cat.image_url, 400)} alt="" className="h-full w-full object-cover" />
-              </div>
-            </Clasp>
+            <div className="hidden h-44 w-36 overflow-hidden rounded-[18px] lg:block">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img(cat.image_url, 400)} alt="" className="h-full w-full object-cover" />
+            </div>
           )}
         </div>
       </section>
