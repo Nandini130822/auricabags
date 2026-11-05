@@ -24,7 +24,6 @@ export function Header({ categories, signedIn }: { categories: Category[]; signe
   const [menu, setMenu] = useState(false);
   const [search, setSearch] = useState(false);
   const [q, setQ] = useState("");
-  const overHero = path === "/" && !scrolled && !menu && !search;
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 40);
@@ -37,8 +36,6 @@ export function Header({ categories, signedIn }: { categories: Category[]; signe
     setSearch(false);
   }, [path]);
 
-  const tone = overHero ? "text-ivory" : "text-ink";
-
   return (
     <>
       <div className="bg-ink text-ivory">
@@ -49,16 +46,16 @@ export function Header({ categories, signedIn }: { categories: Category[]; signe
       </div>
       <header
         className={`sticky top-0 z-50 transition-all duration-500 ${
-          overHero ? "-mb-[76px] bg-transparent" : "border-b border-line bg-ivory/90 backdrop-blur-md"
+          scrolled ? "border-b border-line bg-ivory/90 backdrop-blur-md" : "border-b border-transparent bg-ivory"
         }`}
       >
-        <div className={`container-lux flex h-[76px] items-center justify-between gap-6 ${tone}`}>
+        <div className="container-lux flex h-[76px] items-center justify-between gap-6 text-ink">
           <div className="flex items-center gap-3 xl:hidden">
             <button onClick={() => setMenu(!menu)} aria-label="Menu" className="-ml-2 p-2">
               {menu ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
-          <Logo light={overHero} />
+          <Logo />
           <nav className="hidden items-center gap-6 xl:flex xl:gap-8">
             {NAV.map((n) => (
               <Link key={n.href} href={n.href} className="group relative whitespace-nowrap text-[12px] uppercase tracking-[0.2em]">

@@ -40,78 +40,89 @@ export default async function Home() {
   return (
     <>
       {/* ───────────── HERO ───────────── */}
-      <section className="grain relative overflow-hidden bg-ink text-ivory">
-        <div className="pointer-events-none absolute -right-40 top-20 h-[640px] w-[640px] rounded-full bg-gold/10 blur-[120px]" />
-        <div className="container-lux relative grid min-h-[100svh] items-center gap-12 pb-12 pt-32 lg:grid-cols-[1.1fr_1fr] lg:pt-28">
+      <section className="relative overflow-hidden bg-ivory">
+        {/* soft sand panel behind the image composition */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] rounded-bl-[200px] bg-cream lg:block" />
+        <div className="pointer-events-none absolute right-[18%] top-24 hidden h-72 w-72 rounded-full bg-gold-soft/30 blur-[90px] lg:block" />
+
+        <div className="container-lux relative grid items-center gap-14 pb-16 pt-10 lg:min-h-[calc(100svh-112px)] lg:grid-cols-[1.05fr_1fr] lg:pb-10 lg:pt-6">
           <div className="animate-fade-up">
-            <p className="eyebrow text-gold-soft">The Occasion Edit · Wedding Season 2026</p>
-            <h1 className="h-display mt-7 text-[clamp(56px,8.6vw,144px)]">
+            <p className="eyebrow flex items-center gap-3 text-gold-deep">
+              <span className="h-px w-10 bg-gold" /> Clutches · Potlis · Handbags
+            </p>
+            <h1 className="h-display mt-7 text-[clamp(54px,8vw,132px)] text-ink">
               Carry the
-              <span className="block font-serif italic text-gold-soft">moment.</span>
+              <span className="block font-serif italic text-gold-deep">moment.</span>
             </h1>
-            <p className="mt-8 max-w-md text-[16px] leading-relaxed text-ivory/70">
-              Hand-finished clutches, potlis and handbags for every mehendi, sangeet, reception and the
-              hundred little celebrations between — designed in Surat, delivered across India.
+            <p className="mt-7 max-w-md text-[16px] leading-relaxed text-muted">
+              Hand-finished statement bags for weddings, receptions, parties and every celebration in between —
+              designed in Surat, delivered across India.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link href="/shop" className="btn-gold">
+              <Link href="/shop" className="btn-dark">
                 Shop the collection <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/shop?occasion=wedding" className="btn-line-light">
-                The wedding edit
+              <Link href="/shop?sort=new" className="btn-line">
+                New arrivals
               </Link>
             </div>
-            <div className="mt-14 flex items-center gap-8 text-ivory/60">
-              <div>
-                <p className="font-display text-3xl text-ivory">21.8K+</p>
-                <p className="text-[11px] uppercase tracking-[0.2em]">Instagram family</p>
-              </div>
-              <span className="h-10 w-px bg-ivory/15" />
-              <div>
-                <p className="font-display text-3xl text-ivory">Pan-India</p>
-                <p className="text-[11px] uppercase tracking-[0.2em]">COD available</p>
-              </div>
+            <div className="mt-14 grid max-w-md grid-cols-3 border-t border-line pt-7">
+              {[
+                ["21.8K+", "Happy followers"],
+                ["COD", "Pan-India"],
+                ["7-day", "Easy exchange"],
+              ].map(([a, b]) => (
+                <div key={b}>
+                  <p className="font-display text-[28px] leading-none">{a}</p>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-muted">{b}</p>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="relative mx-auto h-[560px] w-full max-w-[520px] lg:h-[680px]">
-            <div className="absolute right-0 top-0 h-[88%] w-[74%] overflow-hidden rounded-t-full border border-gold/30 p-2">
+          <div className="relative mx-auto h-[520px] w-full max-w-[540px] sm:h-[600px] lg:h-[660px]">
+            {/* gold outline arch, offset behind the main image */}
+            <div className="absolute right-[2%] top-[2%] h-[86%] w-[68%] rounded-t-full border border-gold/50" />
+            <div className="absolute right-[7%] top-[6%] h-[86%] w-[68%] overflow-hidden rounded-t-full bg-sand shadow-[0_30px_80px_-30px_rgba(28,26,23,0.35)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(U("1787284461013-e58abaed4f78"), 1100)} alt="Embroidered Aurica frame bags" className="h-full w-full rounded-t-full object-cover" />
+              <img src={img(U("1787284461013-e58abaed4f78"), 1100)} alt="Embroidered Aurica frame bags" className="h-full w-full object-cover" />
             </div>
-            <div className="absolute bottom-0 left-0 h-[46%] w-[46%] overflow-hidden rounded-t-full border-[6px] border-ink">
+            <div className="absolute bottom-[4%] left-0 h-[38%] w-[42%] overflow-hidden rounded-[28px] border-[6px] border-ivory bg-sand shadow-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img(U("1783700549620-a6699881dc45"), 700)} alt="Crystal beaded clutch" className="h-full w-full object-cover" />
+            </div>
+            <div className="absolute left-[6%] top-[8%] flex h-24 w-24 items-center justify-center rounded-full bg-ink text-center text-ivory shadow-lg sm:h-28 sm:w-28">
+              <p className="font-serif text-[15px] italic leading-tight">
+                New<br />
+                <span className="font-display text-[11px] not-italic tracking-[0.28em]">SEASON</span>
+              </p>
             </div>
             {hero && (
               <Link
                 href={`/product/${hero.slug}`}
-                className="absolute bottom-10 right-4 flex items-center gap-4 rounded-2xl bg-ivory/95 p-3 pr-5 text-ink shadow-2xl backdrop-blur transition hover:-translate-y-1"
+                className="absolute bottom-[10%] right-0 flex items-center gap-4 rounded-2xl bg-white p-3 pr-5 text-ink shadow-2xl transition hover:-translate-y-1"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={img(hero.images[0], 200)} alt="" className="h-14 w-14 rounded-xl object-cover" />
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-muted">Bestseller</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-gold-deep">Bestseller</p>
                   <p className="font-display text-[16px] leading-tight">{hero.name}</p>
                   <p className="text-sm">{inr(hero.price)}</p>
                 </div>
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             )}
-            <span className="absolute -left-2 top-16 hidden rotate-[-90deg] text-[10px] uppercase tracking-[0.5em] text-ivory/40 lg:block">
-              Est. Surat
-            </span>
           </div>
         </div>
 
-        <div className="container-lux relative grid border-t border-ivory/10 sm:grid-cols-3">
+        <div className="container-lux relative grid border-t border-line sm:grid-cols-3">
           {OCCASIONS.slice(0, 3).map((o) => (
-            <Link key={o.slug} href={`/shop?occasion=${o.slug}`} className="group flex items-center justify-between gap-4 border-ivory/10 py-6 sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0">
+            <Link key={o.slug} href={`/shop?occasion=${o.slug}`} className="group flex items-center justify-between gap-4 border-line py-6 sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0">
               <div>
-                <p className="text-[10px] uppercase tracking-[0.28em] text-ivory/50">{o.n} · {o.sub}</p>
+                <p className="text-[10px] uppercase tracking-[0.28em] text-muted">{o.n} · {o.sub}</p>
                 <p className="mt-1 font-display text-2xl">{o.title}</p>
               </div>
-              <ArrowRight className="h-4 w-4 text-gold transition group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 text-gold-deep transition group-hover:translate-x-1" />
             </Link>
           ))}
         </div>
@@ -171,17 +182,21 @@ export default async function Home() {
         <div className="container-lux grid gap-10 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
-              <div className="group relative aspect-[4/5.4] overflow-hidden rounded-[28px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img(U("1681747685985-a401c271156c"), 1000)} alt="The Aurica edit" className="zoom-img h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-8 text-ivory sm:p-10">
-                  <p className="eyebrow text-gold-soft">The Aurica Edit</p>
-                  <p className="h-display mt-4 text-[44px] sm:text-[54px]">
+              <div className="group overflow-hidden rounded-[28px] bg-ivory shadow-[0_30px_80px_-40px_rgba(28,26,23,0.3)]">
+                <div className="aspect-[4/3.6] overflow-hidden rounded-t-full bg-sand m-5 mb-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={img(U("1681747685985-a401c271156c"), 1000)} alt="The Aurica edit" className="zoom-img h-full w-full object-cover" />
+                </div>
+                <div className="p-8 sm:p-10">
+                  <p className="eyebrow text-gold-deep">The Aurica Edit</p>
+                  <p className="h-display mt-4 text-[42px] sm:text-[52px]">
                     Most-loved,<br />
-                    <span className="font-serif italic">most-gifted.</span>
+                    <span className="font-serif italic text-gold-deep">most-gifted.</span>
                   </p>
-                  <Link href="/shop?sort=featured" className="link-arrow mt-7 text-ivory">
+                  <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-muted">
+                    The pieces our customers reorder, gift and tag us in the most.
+                  </p>
+                  <Link href="/shop?sort=featured" className="link-arrow mt-7">
                     Shop bestsellers <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
@@ -299,28 +314,29 @@ export default async function Home() {
 
       {/* ───────────── WHOLESALE BAND ───────────── */}
       <section className="container-lux pb-24 lg:pb-32">
-        <Reveal className="grain relative overflow-hidden rounded-[32px] bg-ink px-8 py-16 text-ivory sm:px-14 lg:py-24">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={img(U("1684407261522-48ad66a060e9"), 1400)} alt="" className="absolute inset-0 h-full w-full object-cover opacity-25" />
-          <div className="relative grid items-end gap-10 lg:grid-cols-[1.4fr_1fr]">
-            <div>
-              <p className="eyebrow text-gold-soft">Single piece & wholesale</p>
-              <h2 className="h-display mt-5 text-[clamp(36px,4.6vw,66px)]">
-                Dressing a bridal party<br />
-                or stocking a <span className="font-serif italic text-gold-soft">boutique?</span>
-              </h2>
+        <Reveal className="relative grid items-center gap-10 overflow-hidden rounded-[32px] border border-line bg-cream px-8 py-12 sm:px-14 lg:grid-cols-[1.3fr_1fr] lg:py-16">
+          <div>
+            <p className="eyebrow text-gold-deep">Single piece & wholesale</p>
+            <h2 className="h-display mt-5 text-[clamp(36px,4.4vw,62px)]">
+              Buying for a boutique<br />
+              or a <span className="font-serif italic text-gold-deep">bridal party?</span>
+            </h2>
+            <p className="mt-6 max-w-md text-muted">
+              Bulk pricing from 10 pieces, custom colours for trousseaus and return gifting, and dispatch from
+              Surat within 72 hours.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/wholesale" className="btn-dark">Wholesale enquiry</Link>
+              <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer" className="btn-line">
+                WhatsApp us
+              </a>
             </div>
-            <div className="lg:justify-self-end">
-              <p className="max-w-sm text-ivory/70">
-                Bulk pricing from 10 pieces, custom colours for wedding trousseaus and return gifting, and
-                dispatch within 72 hours.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/wholesale" className="btn-gold">Wholesale enquiry</Link>
-                <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer" className="btn-line-light">
-                  WhatsApp us
-                </a>
-              </div>
+          </div>
+          <div className="relative mx-auto h-[340px] w-full max-w-[360px] lg:h-[420px]">
+            <div className="absolute inset-0 translate-x-3 -translate-y-3 rounded-t-full border border-gold/50" />
+            <div className="absolute inset-0 overflow-hidden rounded-t-full bg-sand">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img(U("1684407261522-48ad66a060e9"), 900)} alt="Aurica bags on boutique shelves" loading="lazy" className="h-full w-full object-cover" />
             </div>
           </div>
         </Reveal>
