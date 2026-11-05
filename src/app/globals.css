@@ -69,7 +69,7 @@ body {
 }
 
 /* ─── Clutch-clasp frame (see components/Clasp.tsx) ─── */
-.clasp { position: relative; --bar: 5px; --knob: 11px; padding-top: calc(var(--knob) * 0.75); }
+.clasp { position: relative; --bar: 5px; --knob: 13px; padding-top: calc(var(--knob) * 0.75); }
 .clasp-lg { --bar: 8px; --knob: 18px; }
 .clasp > :last-child {
   border-top: var(--bar) solid var(--color-gold);
@@ -83,8 +83,8 @@ body {
 }
 .clasp-lock i {
   display: block; width: var(--knob); height: var(--knob); border-radius: 9999px;
-  background: radial-gradient(circle at 35% 30%, #f6e7c3 0 18%, var(--color-gold-soft) 40%, var(--color-gold-deep) 100%);
-  box-shadow: 0 1px 2px rgb(28 26 23 / 0.35);
+  background: radial-gradient(circle at 34% 30%, #fff4d8 0 14%, #d6b26e 38%, var(--color-gold) 62%, #7a5a2c 100%);
+  box-shadow: 0 0 0 1px #7a5a2c, 0 2px 3px rgb(28 26 23 / 0.35);
 }
 /* the clasp "opens" a little on hover */
 .group:hover .clasp-lock, .clasp:hover .clasp-lock { gap: calc(var(--knob) * 0.35); }
