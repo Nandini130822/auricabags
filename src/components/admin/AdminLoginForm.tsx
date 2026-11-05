@@ -1,10 +1,19 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Loader2, Mail } from "lucide-react";
+import { Eye, EyeOff, Loader2, Mail } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
+/**
+ * Admin sign-in: email + password (default), or a one-time email link.
+ * Only existing accounts can sign in here; admin access is checked by the dashboard.
+ */
 export function AdminLoginForm() {
+  const router = useRouter();
+  const [mode, setMode] = useState<"password" | "link">("password");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [show, setShow] = useState(false);
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
   const [msg, setMsg] = useState("");
@@ -13,13 +22,24 @@ export function AdminLoginForm() {
     e.preventDefault();
     setBusy(true);
     setMsg("");
-    const { error } = await createClient().auth.signInWithOtp({
+    const sb = createClient();
+    if (mode === "password") {
+      const { error } = await sb.auth.signInWithPassword({ email, password });
+      if (error) {
+        setBusy(false);
+        setMsg(/invalid login credentials/i.test(error.message) ? "Wrong email or password." : error.message);
+        return;
+      }
+      router.replace("/admin");
+      router.refresh();
+      return;
+    }
+    const { error } = await sb.auth.signInWithOtp({
       email,
-      // only existing accounts can sign in here — no new sign-ups from the admin page
       options: { shouldCreateUser: false, emailRedirectTo: `${window.location.origin}/auth/callback?next=/admin` },
     });
     setBusy(false);
-    if (error) setMsg(/signups not allowed|not found/i.test(error.message) ? "No account with this email. Ask the owner to add you as an admin." : error.message);
+    if (error) setMsg(/signups not allowed|not found/i.test(error.message) ? "No account with this email." : error.message);
     else setSent(true);
   };
 
@@ -37,13 +57,42 @@ export function AdminLoginForm() {
   return (
     <form onSubmit={submit} className="space-y-3">
       <label className="block">
-        <span className="field-label">Admin email</span>
-        <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="admin@auricabags.com" className="field" />
+        <span className="field-label">Email</span>
+        <input type="email" required autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="admin@auricabags.com" className="field" />
       </label>
+      {mode === "password" && (
+        <label className="block">
+          <span className="field-label">Password</span>
+          <span className="relative block">
+            <input
+              type={show ? "text" : "password"}
+              required
+              autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="field pr-12"
+            />
+            <button type="button" onClick={() => setShow(!show)} aria-label={show ? "Hide password" : "Show password"} className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-muted hover:text-ink">
+              {show ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            </button>
+          </span>
+        </label>
+      )}
       <button disabled={busy} className="btn-dark w-full">
-        {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : null} Email me a sign-in link
+        {busy && <Loader2 className="h-4 w-4 animate-spin" />}
+        {mode === "password" ? "Sign in" : "Email me a sign-in link"}
       </button>
       {msg && <p className="text-sm text-rose">{msg}</p>}
+      <button
+        type="button"
+        onClick={() => {
+          setMode(mode === "password" ? "link" : "password");
+          setMsg("");
+        }}
+        className="tap block w-full pt-2 text-center text-sm text-muted underline underline-offset-4 hover:text-ink"
+      >
+        {mode === "password" ? "Sign in with an email link instead" : "Sign in with a password instead"}
+      </button>
     </form>
   );
 }
