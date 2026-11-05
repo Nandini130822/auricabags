@@ -4,6 +4,9 @@ import { useState } from "react";
 import { Loader2, Mail } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
+/** Google sign-in shows only after it's configured in Google Cloud + Supabase (set NEXT_PUBLIC_GOOGLE_AUTH=true). */
+const GOOGLE_ENABLED = process.env.NEXT_PUBLIC_GOOGLE_AUTH === "true";
+
 function GoogleIcon() {
   return (
     <svg viewBox="0 0 48 48" className="h-5 w-5" aria-hidden>
@@ -63,13 +66,17 @@ export function LoginPanel({ next, demo, error }: { next: string; demo: boolean;
         </div>
       ) : (
         <>
-          <button onClick={google} disabled={!!busy} className="btn mt-10 w-full border border-line bg-white normal-case tracking-normal text-[15px] hover:border-ink">
-            {busy === "google" ? <Loader2 className="h-5 w-5 animate-spin" /> : <GoogleIcon />} Continue with Google
-          </button>
-          <div className="my-7 flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-muted">
-            <span className="h-px flex-1 bg-line" /> or <span className="h-px flex-1 bg-line" />
-          </div>
-          <form onSubmit={magic} className="space-y-3">
+          {GOOGLE_ENABLED && (
+            <>
+              <button onClick={google} disabled={!!busy} className="btn mt-10 w-full border border-line bg-white normal-case tracking-normal text-[15px] hover:border-ink">
+                {busy === "google" ? <Loader2 className="h-5 w-5 animate-spin" /> : <GoogleIcon />} Continue with Google
+              </button>
+              <div className="my-7 flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-muted">
+                <span className="h-px flex-1 bg-line" /> or <span className="h-px flex-1 bg-line" />
+              </div>
+            </>
+          )}
+          <form onSubmit={magic} className={GOOGLE_ENABLED ? "space-y-3" : "mt-10 space-y-3"}>
             <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" className="field" />
             <button disabled={!!busy} className="btn-dark w-full">
               {busy === "email" ? "Sending…" : "Email me a sign-in link"}

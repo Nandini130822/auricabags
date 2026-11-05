@@ -19,8 +19,8 @@ export default async function Success({ searchParams }: { searchParams: Promise<
         Thank you, <span className="font-serif italic text-gold-deep">{o.customer_name.split(" ")[0]}.</span>
       </h1>
       <p className="mx-auto mt-5 max-w-md text-muted">
-        We&apos;ve received your order and sent a confirmation to {o.email}. Your piece will be hand-checked and
-        dispatched from Surat within 48 hours.
+        We&apos;ve received your order. Your piece will be hand-checked and dispatched from Surat within 48 hours —
+        you can track it anytime from My Account.
       </p>
       <div className="mt-12 rounded-[28px] bg-cream/70 p-8 text-left">
         <ul className="divide-y divide-line">
