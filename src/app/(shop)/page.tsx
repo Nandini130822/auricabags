@@ -85,11 +85,11 @@ export default async function Home() {
             <div className="absolute right-[2%] top-[2%] h-[86%] w-[68%] rounded-[18px] border border-gold/50" />
             <div className="absolute right-[7%] top-[6%] h-[86%] w-[68%] overflow-hidden rounded-[18px] bg-sand shadow-[0_30px_80px_-30px_rgba(28,26,23,0.35)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(U("1787284461013-e58abaed4f78"), 1100)} alt="Embroidered Aurica frame bags" className="h-full w-full object-cover" />
+              <img src="/images/hero/pearl-beaded-bag.webp" alt="Aurica pearl-beaded evening bag" className="h-full w-full object-cover" fetchPriority="high" />
             </div>
             <div className="absolute bottom-[4%] left-0 h-[38%] w-[42%] overflow-hidden rounded-[28px] border-[6px] border-ivory bg-sand shadow-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img("/images/products/pearl-frame-clutch.webp", 700)} alt="Pearl frame clutch" className="h-full w-full object-cover" />
+              <img src="/images/products/gold-bow-clutch.webp" alt="Gold bow clutch" className="h-full w-full object-cover" />
             </div>
             <div className="absolute left-[6%] top-[8%] flex h-24 w-24 items-center justify-center rounded-full bg-ink text-center text-ivory shadow-lg sm:h-28 sm:w-28">
               <p className="font-serif text-[15px] italic leading-tight">
