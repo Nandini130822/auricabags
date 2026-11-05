@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Clasp } from "./Clasp";
 import type { Product } from "@/lib/types";
 import { discountPct, img, inr } from "@/lib/format";
 
@@ -6,7 +7,8 @@ export function ProductCard({ p, index, tall = false }: { p: Product; index?: nu
   const off = discountPct(p.price, p.compare_at_price);
   return (
     <Link href={`/product/${p.slug}`} className="group block">
-      <div className={`relative overflow-hidden rounded-[22px] bg-cream ${tall ? "aspect-[3/4.2]" : "aspect-[4/5]"}`}>
+      <Clasp>
+      <div className={`relative overflow-hidden bg-cream ${tall ? "aspect-[3/4.2]" : "aspect-[4/5]"}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={img(p.images[0], 800)} alt={p.name} loading="lazy" className="zoom-img absolute inset-0 h-full w-full object-cover" />
         {p.images[1] && (
@@ -38,6 +40,7 @@ export function ProductCard({ p, index, tall = false }: { p: Product; index?: nu
           </span>
         )}
       </div>
+      </Clasp>
       <div className="mt-4 flex items-start justify-between gap-3 px-1">
         <div>
           <p className="font-display text-[19px] leading-tight">{p.name}</p>
