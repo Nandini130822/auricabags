@@ -33,11 +33,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="eyebrow">
-            <Link href="/shop">Shop</Link>
+            <Link href="/shop" className="tap">Shop</Link>
             {p.category && (
               <>
                 {" / "}
-                <Link href={`/shop?category=${p.category.slug}`}>{p.category.name}</Link>
+                <Link href={`/shop?category=${p.category.slug}`} className="tap">{p.category.name}</Link>
               </>
             )}
           </p>

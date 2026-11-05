@@ -19,16 +19,16 @@ export function ProductCard({ p, index, tall = false }: { p: Product; index?: nu
           />
         )}
         <div className="absolute left-3 top-3 flex gap-1.5">
-          {p.is_new && <span className="rounded-full bg-ivory/90 px-3 py-1 text-[10px] uppercase tracking-[0.18em]">New</span>}
-          {off > 0 && <span className="rounded-full bg-ink/85 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-ivory">−{off}%</span>}
+          {p.is_new && <span className="rounded-full bg-ivory/90 px-3 py-1 text-[11px] uppercase tracking-[0.18em]">New</span>}
+          {off > 0 && <span className="rounded-full bg-ink/85 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ivory">−{off}%</span>}
         </div>
         {p.stock > 0 && p.stock <= 5 && (
-          <span className="absolute bottom-3 left-3 rounded-full bg-ivory/90 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-rose">
+          <span className="absolute bottom-3 left-3 rounded-full bg-ivory/90 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-rose">
             Only {p.stock} left
           </span>
         )}
         {p.stock === 0 && (
-          <span className="absolute inset-x-3 bottom-3 rounded-full bg-ink/80 py-2 text-center text-[10px] uppercase tracking-[0.2em] text-ivory">
+          <span className="absolute inset-x-3 bottom-3 rounded-full bg-ink/80 py-2 text-center text-[11px] uppercase tracking-[0.2em] text-ivory">
             Sold out
           </span>
         )}

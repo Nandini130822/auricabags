@@ -39,7 +39,7 @@ export function Header({ categories, signedIn }: { categories: Category[]; signe
   return (
     <>
       <div className="bg-ink text-ivory">
-        <div className="container-lux flex h-9 items-center justify-center text-[11px] uppercase tracking-[0.24em]">
+        <div className="container-lux flex min-h-9 items-center justify-center py-2 text-center text-[11px] uppercase leading-snug tracking-[0.14em] sm:tracking-[0.24em]">
           <span className="hidden sm:inline">Free shipping above ₹1,999&nbsp;&nbsp;·&nbsp;&nbsp;</span>
           Code <b className="mx-1.5 text-gold-soft">AURICA10</b> for 10% off your first order
         </div>
@@ -49,9 +49,9 @@ export function Header({ categories, signedIn }: { categories: Category[]; signe
           scrolled ? "border-b border-line bg-ivory/90 backdrop-blur-md" : "border-b border-transparent bg-ivory"
         }`}
       >
-        <div className="container-lux flex h-[76px] items-center justify-between gap-6 text-ink">
+        <div className="container-lux flex h-[68px] items-center justify-between gap-3 text-ink sm:h-[76px] sm:gap-6">
           <div className="flex items-center gap-3 xl:hidden">
-            <button onClick={() => setMenu(!menu)} aria-label="Menu" className="-ml-2 p-2">
+            <button onClick={() => setMenu(!menu)} aria-label="Menu" className="-ml-2 p-2.5">
               {menu ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
@@ -64,20 +64,20 @@ export function Header({ categories, signedIn }: { categories: Category[]; signe
               </Link>
             ))}
           </nav>
-          <div className="flex items-center gap-1 sm:gap-2">
-            <button onClick={() => setSearch(!search)} aria-label="Search" className="p-2">
+          <div className="flex shrink-0 items-center sm:gap-2">
+            <button onClick={() => setSearch(!search)} aria-label="Search" className="p-2.5 sm:p-2">
               <Search className="h-[19px] w-[19px]" strokeWidth={1.5} />
             </button>
             <Link href={signedIn ? "/account/wishlist" : "/login"} aria-label="Wishlist" className="hidden p-2 sm:block">
               <Heart className="h-[19px] w-[19px]" strokeWidth={1.5} />
             </Link>
-            <Link href={signedIn ? "/account" : "/login"} aria-label="Account" className="p-2">
+            <Link href={signedIn ? "/account" : "/login"} aria-label="Account" className="p-2.5 sm:p-2">
               <User className="h-[19px] w-[19px]" strokeWidth={1.5} />
             </Link>
-            <button onClick={() => setOpen(true)} aria-label="Open bag" className="relative p-2">
+            <button onClick={() => setOpen(true)} aria-label="Open bag" className="relative -mr-2 p-2.5 sm:mr-0 sm:p-2">
               <ShoppingBag className="h-[19px] w-[19px]" strokeWidth={1.5} />
               {count > 0 && (
-                <span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-medium text-ink">
+                <span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-gold px-1 text-[11px] font-medium text-ink">
                   {count}
                 </span>
               )}
@@ -108,7 +108,7 @@ export function Header({ categories, signedIn }: { categories: Category[]; signe
         )}
 
         {menu && (
-          <div className="h-[calc(100dvh-112px)] overflow-y-auto border-t border-line bg-ivory xl:hidden">
+          <div className="h-[calc(100dvh-104px)] overflow-y-auto border-t border-line bg-ivory xl:hidden">
             <div className="container-lux py-8">
               {NAV.map((n, i) => (
                 <Link key={n.href} href={n.href} className="flex items-baseline gap-4 border-b border-line py-4">

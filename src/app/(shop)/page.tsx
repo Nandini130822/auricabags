@@ -74,7 +74,7 @@ export default async function Home() {
               ].map(([a, b]) => (
                 <div key={b}>
                   <p className="font-display text-[28px] leading-none">{a}</p>
-                  <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-muted">{b}</p>
+                  <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-muted">{b}</p>
                 </div>
               ))}
             </div>
@@ -105,7 +105,7 @@ export default async function Home() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={img(hero.images[0], 200)} alt="" className="h-14 w-14 rounded-xl object-cover" />
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-gold-deep">Bestseller</p>
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-gold-deep">Bestseller</p>
                   <p className="font-display text-[16px] leading-tight">{hero.name}</p>
                   <p className="text-sm">{inr(hero.price)}</p>
                 </div>
@@ -119,7 +119,7 @@ export default async function Home() {
           {OCCASIONS.slice(0, 3).map((o) => (
             <Link key={o.slug} href={`/shop?occasion=${o.slug}`} className="group flex items-center justify-between gap-4 border-line py-6 sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0">
               <div>
-                <p className="text-[10px] uppercase tracking-[0.28em] text-muted">{o.n} · {o.sub}</p>
+                <p className="text-[11px] uppercase tracking-[0.28em] text-muted">{o.n} · {o.sub}</p>
                 <p className="mt-1 font-display text-2xl">{o.title}</p>
               </div>
               <ArrowRight className="h-4 w-4 text-gold-deep transition group-hover:translate-x-1" />
@@ -200,7 +200,7 @@ export default async function Home() {
                 <img src={img(U("1681747685985-a401c271156c"), 1200)} alt="The Aurica edit" className="zoom-img absolute inset-0 h-full w-full object-cover" />
                 <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-4 rounded-2xl bg-ivory/95 px-6 py-5 backdrop-blur sm:right-auto sm:min-w-[320px]">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.24em] text-gold-deep">Bestsellers</p>
+                    <p className="text-[11px] uppercase tracking-[0.24em] text-gold-deep">Bestsellers</p>
                     <p className="mt-1 font-display text-[22px] leading-tight">The pieces everyone gifts</p>
                   </div>
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-ivory transition group-hover:bg-gold-deep">
@@ -418,7 +418,7 @@ export default async function Home() {
                   <svg viewBox="0 0 24 24" className="ml-0.5 h-4 w-4" fill="currentColor" aria-hidden><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" /></svg>
                 </span>
                 <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/75 via-ink/25 to-transparent p-5 pt-16 text-ivory">
-                  <span className="text-[10px] uppercase tracking-[0.24em] text-gold-soft">{r.tag}</span>
+                  <span className="text-[11px] uppercase tracking-[0.24em] text-gold-soft">{r.tag}</span>
                   <span className="mt-1 flex items-center justify-between gap-3">
                     <span className="font-display text-[20px] leading-tight">{r.title}</span>
                     <Instagram className="h-5 w-5 shrink-0 opacity-80" />

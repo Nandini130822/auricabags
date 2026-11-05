@@ -47,7 +47,7 @@ export default async function Shop({ searchParams }: { searchParams: Promise<SP>
         <div className="container-lux grid items-end gap-8 py-16 lg:grid-cols-[1fr_auto] lg:py-24">
           <div>
             <p className="eyebrow">
-              <Link href="/">Home</Link> / Shop{cat ? ` / ${cat.name}` : ""}
+              <Link href="/" className="tap">Home</Link> / Shop{cat ? ` / ${cat.name}` : ""}
             </p>
             <h1 className="h-display mt-5 text-[clamp(48px,7vw,110px)]">{title}</h1>
             <p className="mt-5 max-w-lg text-muted">{desc}</p>
@@ -78,7 +78,7 @@ export default async function Shop({ searchParams }: { searchParams: Promise<SP>
                 const v = o.toLowerCase();
                 const on = sp.occasion === v;
                 return (
-                  <Link key={o} href={href({ occasion: on ? undefined : v })} className={`shrink-0 border-b pb-0.5 transition ${on ? "border-gold text-ink" : "border-transparent text-muted hover:text-ink"}`}>
+                  <Link key={o} href={href({ occasion: on ? undefined : v })} className={`tap shrink-0 border-b pb-0.5 transition ${on ? "border-gold text-ink" : "border-transparent text-muted hover:text-ink"}`}>
                     {o}
                   </Link>
                 );

@@ -79,8 +79,8 @@ export function LoginPanel({ next, demo, error }: { next: string; demo: boolean;
       )}
       {msg && <p className="mt-4 text-sm text-rose">{msg}</p>}
       <p className="mt-10 text-xs text-muted">
-        By continuing you agree to our <Link href="/policies/terms" className="underline">terms</Link> and{" "}
-        <Link href="/policies/privacy" className="underline">privacy policy</Link>.
+        By continuing you agree to our <Link href="/policies/terms" className="tap underline">terms</Link> and{" "}
+        <Link href="/policies/privacy" className="tap underline">privacy policy</Link>.
       </p>
     </div>
   );

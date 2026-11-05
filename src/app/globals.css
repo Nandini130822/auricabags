@@ -68,6 +68,10 @@ body {
   .field-label { @apply mb-1.5 block text-[11px] uppercase tracking-[0.2em] text-muted; }
 }
 
+/* ─── Bigger touch areas for small text links (invisible; same look) ─── */
+.link-arrow, .tap { position: relative; }
+.link-arrow::before, .tap::before { content: ""; position: absolute; inset: -12px -6px; }
+
 /* ─── Realistic frame-clutch clasp (components/FrameClasp.tsx) ─── */
 .frame-clasp > :last-child { border-radius: 4px 4px 18px 18px; }
 .frame-clasp .kl-left, .frame-clasp .kl-right {

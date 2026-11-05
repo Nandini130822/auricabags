@@ -174,7 +174,7 @@ export function CheckoutForm(props: {
                 <span className="relative h-16 w-14 shrink-0 overflow-hidden rounded-xl bg-sand">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={img(i.image, 160)} alt="" className="h-full w-full object-cover" />
-                  <span className="absolute -right-0 -top-0 flex h-5 w-5 items-center justify-center rounded-bl-lg bg-ink text-[10px] text-ivory">{i.quantity}</span>
+                  <span className="absolute -right-0 -top-0 flex h-5 w-5 items-center justify-center rounded-bl-lg bg-ink text-[11px] text-ivory">{i.quantity}</span>
                 </span>
                 <span className="flex-1 text-sm">
                   <span className="block font-display text-base">{i.name}</span>
