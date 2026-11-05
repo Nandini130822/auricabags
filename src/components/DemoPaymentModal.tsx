@@ -50,7 +50,7 @@ export function DemoPaymentModal({
 
   return (
     <div className="fixed inset-0 z-[80] flex items-center justify-center bg-ink/60 p-4 backdrop-blur-sm">
-      <div className="relative w-full max-w-[420px] overflow-hidden rounded-2xl bg-white font-sans text-ink shadow-2xl">
+      <div className="relative max-h-[calc(100dvh-2rem)] w-full max-w-[420px] overflow-y-auto rounded-2xl bg-white font-sans text-ink shadow-2xl">
         <div className="absolute right-0 top-0 rounded-bl-xl bg-amber-400 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-ink">
           Test mode
         </div>
