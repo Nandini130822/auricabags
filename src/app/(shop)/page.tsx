@@ -180,36 +180,45 @@ export default async function Home() {
 
       {/* ───────────── THE EDIT ───────────── */}
       <section className="bg-cream/60 py-24 lg:py-32">
-        <div className="container-lux grid gap-10 lg:grid-cols-12">
-          <Reveal className="lg:col-span-5">
-            <div className="lg:sticky lg:top-28">
-              <div className="group overflow-hidden rounded-[28px] bg-ivory shadow-[0_30px_80px_-40px_rgba(28,26,23,0.3)]">
-                <div className="aspect-[4/3.6] overflow-hidden rounded-[18px] bg-sand m-5 mb-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={img(U("1681747685985-a401c271156c"), 1000)} alt="The Aurica edit" className="zoom-img h-full w-full object-cover" />
-                </div>
-                <div className="p-8 sm:p-10">
-                  <p className="eyebrow text-gold-deep">The Aurica Edit</p>
-                  <p className="h-display mt-4 text-[42px] sm:text-[52px]">
-                    Most-loved,<br />
-                    <span className="font-serif italic text-gold-deep">most-gifted.</span>
-                  </p>
-                  <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-muted">
-                    The pieces our customers reorder, gift and tag us in the most.
-                  </p>
-                  <Link href="/shop?sort=featured" className="link-arrow mt-7">
-                    Shop bestsellers <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
-                </div>
-              </div>
+        <div className="container-lux">
+          <Reveal className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow text-gold-deep">The Aurica Edit</p>
+              <h2 className="h-display mt-4 text-[clamp(36px,4.4vw,60px)]">
+                Most-loved, <span className="font-serif italic text-gold-deep">most-gifted.</span>
+              </h2>
             </div>
+            <Link href="/shop?sort=featured" className="link-arrow">
+              Shop bestsellers <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </Reveal>
-          <div className="grid grid-cols-2 gap-x-5 gap-y-12 lg:col-span-7">
-            {featured.map((p, i) => (
-              <Reveal key={p.id} delay={i * 90} className={i % 2 === 1 ? "lg:mt-20" : ""}>
-                <ProductCard p={p} index={i} />
-              </Reveal>
-            ))}
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-2 lg:gap-6">
+            {/* one big feature image */}
+            <Reveal className="h-full">
+              <Link href="/shop?sort=featured" className="group relative block h-full min-h-[440px] overflow-hidden rounded-[20px] bg-sand">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={img(U("1681747685985-a401c271156c"), 1200)} alt="The Aurica edit" className="zoom-img absolute inset-0 h-full w-full object-cover" />
+                <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-4 rounded-2xl bg-ivory/95 px-6 py-5 backdrop-blur sm:right-auto sm:min-w-[320px]">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-gold-deep">Bestsellers</p>
+                    <p className="mt-1 font-display text-[22px] leading-tight">The pieces everyone gifts</p>
+                  </div>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-ivory transition group-hover:bg-gold-deep">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+
+            {/* four product cards, 2 x 2 */}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-5">
+              {featured.slice(0, 4).map((p, i) => (
+                <Reveal key={p.id} delay={i * 80}>
+                  <ProductCard p={p} />
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -339,7 +348,7 @@ export default async function Home() {
             <div className="absolute inset-0 translate-x-3 -translate-y-3 rounded-[18px] border border-gold/50" />
             <div className="absolute inset-0 overflow-hidden rounded-[18px] bg-sand">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(U("1684407261522-48ad66a060e9"), 900)} alt="Aurica bags on boutique shelves" loading="lazy" className="h-full w-full object-cover" />
+              <img src={img(U("1767771322982-8041f4a5da8e"), 900)} alt="Embroidered Aurica bags on display" loading="lazy" className="h-full w-full object-cover" />
             </div>
           </div>
         </Reveal>
