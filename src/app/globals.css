@@ -79,6 +79,20 @@ body {
 .group:hover .frame-clasp .kl-left { transform: rotate(-14deg); }
 .group:hover .frame-clasp .kl-right { transform: rotate(14deg); }
 
+/* ─── Instagram reel cards: slow "playing" motion + story progress bar ─── */
+@keyframes reel-pan {
+  0% { transform: scale(1.02) translate(0, 0); }
+  50% { transform: scale(1.14) translate(-2%, -3%); }
+  100% { transform: scale(1.06) translate(2%, -1%); }
+}
+@keyframes reel-progress { from { width: 0; } to { width: 100%; } }
+.reel-img { animation: reel-pan 14s ease-in-out infinite alternate; animation-delay: var(--reel-delay, 0s); }
+.reel-progress { width: 0; animation: reel-progress 7s linear infinite; animation-delay: var(--reel-delay, 0s); }
+@media (prefers-reduced-motion: reduce) {
+  .reel-img, .reel-progress { animation: none; }
+  .reel-progress { width: 35%; }
+}
+
 /* Image hover zoom */
 .zoom-img { transition: transform 1.4s var(--ease-lux); }
 .group:hover .zoom-img { transform: scale(1.05); }

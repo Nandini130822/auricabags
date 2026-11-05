@@ -19,13 +19,12 @@ const OCCASIONS = [
   { n: "06", title: "Everyday", sub: "Polished daily companions", slug: "everyday", image: U("1598532163257-ae3c6b2524b6") },
 ];
 
-const INSTA = [
-  "1742626181963-1244929d2fdb",
-  "1759064716592-3963a0881ff8",
-  "1681747685985-a401c271156c",
-  "1598552105309-9243044d2002",
-  "1584917865442-de89df76afd3",
-  "1768767115625-69d3c41f7bb1",
+/** Aurica's own reels (cover frames from @aurica_bags). Each card opens the reel on Instagram. */
+const REELS = [
+  { code: "De7AcdXJhOQ", image: "/images/insta/shell-mini-potli.webp", title: "Shell mini potli", tag: "Festive" },
+  { code: "DepCAZPMUV9", image: "/images/insta/pink-tassel-bag.webp", title: "Pink tassel bag", tag: "Party" },
+  { code: "DeUTpOXhROC", image: "/images/insta/gold-navratri-bag.webp", title: "Gold Navratri sling", tag: "Navratri" },
+  { code: "Ddbpou9MUNk", image: "/images/insta/crystal-phone-clutch.webp", title: "Crystal phone clutch", tag: "Statement" },
 ];
 
 export default async function Home() {
@@ -397,15 +396,33 @@ export default async function Home() {
             <a href={SITE.instagram} target="_blank" rel="noreferrer" className="mt-4 font-display text-3xl hover:text-gold-deep">
               @aurica_bags
             </a>
-            <p className="mt-2 text-sm text-muted">Tag us to be featured — styled by our community of 21.8K.</p>
+            <p className="mt-2 text-sm text-muted">Straight from our reels — tap any bag to watch it on Instagram.</p>
           </div>
-          <div className="mt-12 grid grid-cols-3 gap-2 sm:gap-4 lg:grid-cols-6">
-            {INSTA.map((id) => (
-              <a key={id} href={SITE.instagram} target="_blank" rel="noreferrer" className="group relative aspect-square overflow-hidden rounded-2xl bg-cream">
+          <div className="no-scrollbar -mx-4 mt-12 flex snap-x gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4 lg:gap-5">
+            {REELS.map((r, i) => (
+              <a
+                key={r.code}
+                href={`https://www.instagram.com/reel/${r.code}/`}
+                target="_blank"
+                rel="noreferrer"
+                className="reel group relative aspect-[4/5] w-[72vw] shrink-0 snap-start overflow-hidden rounded-[20px] bg-sand sm:w-auto"
+                style={{ ["--reel-delay" as string]: `${i * -2.3}s` }}
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img(U(id), 500)} alt="Aurica on Instagram" loading="lazy" className="zoom-img h-full w-full object-cover" />
-                <span className="absolute inset-0 flex items-center justify-center bg-ink/0 text-ivory opacity-0 transition group-hover:bg-ink/30 group-hover:opacity-100">
-                  <Instagram className="h-6 w-6" />
+                <img src={r.image} alt={`${r.title} — Aurica Bags reel`} loading="lazy" className="reel-img absolute inset-0 h-full w-full object-cover" />
+                {/* story-style progress bar */}
+                <span className="absolute inset-x-4 top-4 h-[3px] overflow-hidden rounded-full bg-ivory/35">
+                  <span className="reel-progress block h-full rounded-full bg-ivory" />
+                </span>
+                <span className="absolute right-4 top-9 flex h-10 w-10 items-center justify-center rounded-full bg-ivory/90 text-ink shadow-lg transition group-hover:scale-110">
+                  <svg viewBox="0 0 24 24" className="ml-0.5 h-4 w-4" fill="currentColor" aria-hidden><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" /></svg>
+                </span>
+                <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/75 via-ink/25 to-transparent p-5 pt-16 text-ivory">
+                  <span className="text-[10px] uppercase tracking-[0.24em] text-gold-soft">{r.tag}</span>
+                  <span className="mt-1 flex items-center justify-between gap-3">
+                    <span className="font-display text-[20px] leading-tight">{r.title}</span>
+                    <Instagram className="h-5 w-5 shrink-0 opacity-80" />
+                  </span>
                 </span>
               </a>
             ))}
