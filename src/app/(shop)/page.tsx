@@ -10,10 +10,10 @@ import { SITE } from "@/lib/config";
 const U = (id: string) => `https://images.unsplash.com/photo-${id}`;
 
 const OCCASIONS = [
-  { n: "01", title: "The Wedding", sub: "Potlis & bridal clutches", slug: "wedding", image: U("1784450691236-d970d91b58a9") },
-  { n: "02", title: "Reception Night", sub: "Crystal & satin minaudières", slug: "reception", image: U("1742626181963-1244929d2fdb") },
+  { n: "01", title: "The Wedding", sub: "Potlis & bridal clutches", slug: "wedding", image: "/images/products/gold-zari-flower-bag.webp" },
+  { n: "02", title: "Reception Night", sub: "Crystal & satin minaudières", slug: "reception", image: "/images/products/pearl-frame-clutch.webp" },
   { n: "03", title: "Sangeet & Mehendi", sub: "Colour, beads & tassels", slug: "sangeet", image: U("1767771322982-8041f4a5da8e") },
-  { n: "04", title: "Cocktail & Party", sub: "Metallics after dark", slug: "party", image: U("1589363358751-ab05797e5629") },
+  { n: "04", title: "Cocktail & Party", sub: "Metallics after dark", slug: "party", image: "/images/products/black-sequin-clutch.webp" },
   { n: "05", title: "Festive", sub: "Zari, silk & gold", slug: "festive", image: U("1759064716592-3963a0881ff8") },
   { n: "06", title: "Everyday", sub: "Polished daily companions", slug: "everyday", image: U("1598532163257-ae3c6b2524b6") },
 ];
@@ -89,7 +89,7 @@ export default async function Home() {
             </div>
             <div className="absolute bottom-[4%] left-0 h-[38%] w-[42%] overflow-hidden rounded-[28px] border-[6px] border-ivory bg-sand shadow-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(U("1783700549620-a6699881dc45"), 700)} alt="Crystal beaded clutch" className="h-full w-full object-cover" />
+              <img src={img("/images/products/pearl-frame-clutch.webp", 700)} alt="Pearl frame clutch" className="h-full w-full object-cover" />
             </div>
             <div className="absolute left-[6%] top-[8%] flex h-24 w-24 items-center justify-center rounded-full bg-ink text-center text-ivory shadow-lg sm:h-28 sm:w-28">
               <p className="font-serif text-[15px] italic leading-tight">
