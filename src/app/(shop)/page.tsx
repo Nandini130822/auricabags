@@ -132,29 +132,37 @@ export default async function Home() {
           )}
         </div>
 
-        <div className="container-lux relative grid border-t border-line sm:grid-cols-3">
-          {OCCASIONS.slice(0, 3).map((o) => (
-            <Link key={o.slug} href={`/shop?occasion=${o.slug}`} className="group flex items-center justify-between gap-4 border-line py-6 sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0">
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.28em] text-muted">{o.n} · {o.sub}</p>
-                <p className="mt-1 font-display text-2xl">{o.title}</p>
-              </div>
-              <ArrowRight className="h-4 w-4 text-gold-deep transition group-hover:translate-x-1" />
-            </Link>
-          ))}
+        {/* full-width white band so the grey hero panel never shows behind these links */}
+        <div className="relative z-10 border-t border-line bg-ivory">
+          <div className="container-lux grid sm:grid-cols-3">
+            {OCCASIONS.slice(0, 3).map((o) => (
+              <Link key={o.slug} href={`/shop?occasion=${o.slug}`} className="group flex items-center justify-between gap-4 border-b border-line py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.28em] text-muted">{o.n} · {o.sub}</p>
+                  <p className="mt-1 font-display text-2xl">{o.title}</p>
+                </div>
+                <ArrowRight className="h-4 w-4 text-gold-deep transition group-hover:translate-x-1" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ───────────── MARQUEE ───────────── */}
-      <div className="overflow-hidden border-b border-line bg-cream py-5">
-        <div className="flex w-max animate-marquee gap-12 whitespace-nowrap font-display text-[22px] text-ink/80">
-          {Array.from({ length: 2 }).flatMap((_, k) =>
-            ["Handcrafted in Surat", "Single piece & wholesale", "Cash on delivery", "Free shipping above ₹1,999", "Easy 7-day exchange", "Made for every celebration"].map((t) => (
-              <span key={t + k} className="flex items-center gap-12">
-                {t} <span className="text-gold">✦</span>
-              </span>
-            )),
-          )}
+      <div className="mt-10 bg-ink sm:mt-14 lg:mt-16">
+        <div className="marquee group overflow-hidden py-4 sm:py-5" aria-label="Aurica promises">
+          <div className="flex w-max animate-marquee items-center whitespace-nowrap group-hover:[animation-play-state:paused]">
+            {Array.from({ length: 2 }).flatMap((_, k) =>
+              ["Handcrafted in Surat", "Single piece & wholesale", "Cash on delivery", "Free shipping above ₹1,999", "Easy 7-day exchange", "Made for every celebration"].map((t) => (
+                <span key={t + k} className="flex items-center">
+                  <span className="px-7 font-serif text-[20px] italic text-ivory sm:px-10 sm:text-[24px]">{t}</span>
+                  <span className="text-[13px] text-gold" aria-hidden>
+                    ✦
+                  </span>
+                </span>
+              )),
+            )}
+          </div>
         </div>
       </div>
 

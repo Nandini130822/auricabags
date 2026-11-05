@@ -69,6 +69,13 @@ body {
   .field-label { @apply mb-1.5 block text-[11px] uppercase tracking-[0.2em] text-muted; }
 }
 
+/* ─── Marquee band: soft fade at both edges ─── */
+.marquee {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+@media (prefers-reduced-motion: reduce) { .marquee .animate-marquee { animation: none; } }
+
 /* ─── Bigger touch areas for small text links (invisible; same look) ─── */
 .link-arrow, .tap { position: relative; }
 .link-arrow::before, .tap::before { content: ""; position: absolute; inset: -12px -6px; }
