@@ -53,7 +53,7 @@ export default async function Shop({ searchParams }: { searchParams: Promise<SP>
             <p className="mt-5 max-w-lg text-muted">{desc}</p>
           </div>
           {cat?.image_url && (
-            <div className="hidden h-44 w-36 overflow-hidden rounded-t-full lg:block">
+            <div className="hidden h-44 w-36 overflow-hidden rounded-[18px] lg:block">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img(cat.image_url, 400)} alt="" className="h-full w-full object-cover" />
             </div>

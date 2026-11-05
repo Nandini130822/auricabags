@@ -42,7 +42,7 @@ export default async function Home() {
       {/* ───────────── HERO ───────────── */}
       <section className="relative overflow-hidden bg-ivory">
         {/* soft sand panel behind the image composition */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] rounded-bl-[200px] bg-cream lg:block" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] bg-cream lg:block" />
         <div className="pointer-events-none absolute right-[18%] top-24 hidden h-72 w-72 rounded-full bg-gold-soft/30 blur-[90px] lg:block" />
 
         <div className="container-lux relative grid items-center gap-14 pb-16 pt-10 lg:min-h-[calc(100svh-112px)] lg:grid-cols-[1.05fr_1fr] lg:pb-10 lg:pt-6">
@@ -82,8 +82,8 @@ export default async function Home() {
 
           <div className="relative mx-auto h-[520px] w-full max-w-[540px] sm:h-[600px] lg:h-[660px]">
             {/* gold outline arch, offset behind the main image */}
-            <div className="absolute right-[2%] top-[2%] h-[86%] w-[68%] rounded-t-full border border-gold/50" />
-            <div className="absolute right-[7%] top-[6%] h-[86%] w-[68%] overflow-hidden rounded-t-full bg-sand shadow-[0_30px_80px_-30px_rgba(28,26,23,0.35)]">
+            <div className="absolute right-[2%] top-[2%] h-[86%] w-[68%] rounded-[18px] border border-gold/50" />
+            <div className="absolute right-[7%] top-[6%] h-[86%] w-[68%] overflow-hidden rounded-[18px] bg-sand shadow-[0_30px_80px_-30px_rgba(28,26,23,0.35)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img(U("1787284461013-e58abaed4f78"), 1100)} alt="Embroidered Aurica frame bags" className="h-full w-full object-cover" />
             </div>
@@ -161,7 +161,7 @@ export default async function Home() {
           {OCCASIONS.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80} className="shrink-0 snap-start">
               <Link href={`/shop?occasion=${o.slug}`} className="group block w-[72vw] sm:w-[340px]">
-                <div className="relative aspect-[3/4.3] overflow-hidden rounded-t-full bg-cream">
+                <div className="relative aspect-[3/4.3] overflow-hidden rounded-[18px] bg-cream">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={img(o.image, 700)} alt={o.title} loading="lazy" className="zoom-img h-full w-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
@@ -183,7 +183,7 @@ export default async function Home() {
           <Reveal className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
               <div className="group overflow-hidden rounded-[28px] bg-ivory shadow-[0_30px_80px_-40px_rgba(28,26,23,0.3)]">
-                <div className="aspect-[4/3.6] overflow-hidden rounded-t-full bg-sand m-5 mb-0">
+                <div className="aspect-[4/3.6] overflow-hidden rounded-[18px] bg-sand m-5 mb-0">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={img(U("1681747685985-a401c271156c"), 1000)} alt="The Aurica edit" className="zoom-img h-full w-full object-cover" />
                 </div>
@@ -221,7 +221,7 @@ export default async function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img(U("1713425885188-f1daa057691f"), 900)} alt="Aurica purses" loading="lazy" className="h-full w-full object-cover" />
             </div>
-            <div className="absolute bottom-0 right-0 h-[62%] w-[52%] overflow-hidden rounded-t-full border-[10px] border-ivory">
+            <div className="absolute bottom-0 right-0 h-[62%] w-[52%] overflow-hidden rounded-[18px] border-[10px] border-ivory">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img(U("1784450691236-d970d91b58a9"), 700)} alt="Gold potli and heels" loading="lazy" className="h-full w-full object-cover" />
             </div>
@@ -278,7 +278,7 @@ export default async function Home() {
               return (
                 <Reveal key={c.id} delay={i * 60}>
                   <Link href={`/shop?category=${c.slug}`} className="group block text-center">
-                    <div className={`overflow-hidden bg-cream ${i % 2 ? "rounded-[24px]" : "rounded-t-full"} aspect-[3/4]`}>
+                    <div className={`overflow-hidden bg-cream rounded-[18px] aspect-[3/4]`}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={img(c.image_url, 600)} alt={c.name} loading="lazy" className="zoom-img h-full w-full object-cover" />
                     </div>
@@ -333,8 +333,8 @@ export default async function Home() {
             </div>
           </div>
           <div className="relative mx-auto h-[340px] w-full max-w-[360px] lg:h-[420px]">
-            <div className="absolute inset-0 translate-x-3 -translate-y-3 rounded-t-full border border-gold/50" />
-            <div className="absolute inset-0 overflow-hidden rounded-t-full bg-sand">
+            <div className="absolute inset-0 translate-x-3 -translate-y-3 rounded-[18px] border border-gold/50" />
+            <div className="absolute inset-0 overflow-hidden rounded-[18px] bg-sand">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img(U("1684407261522-48ad66a060e9"), 900)} alt="Aurica bags on boutique shelves" loading="lazy" className="h-full w-full object-cover" />
             </div>
