@@ -100,7 +100,7 @@ export default async function Home() {
             {hero && (
               <Link
                 href={`/product/${hero.slug}`}
-                className="absolute bottom-[10%] right-0 flex items-center gap-4 rounded-2xl bg-white p-3 pr-5 text-ink shadow-2xl transition hover:-translate-y-1"
+                className="absolute bottom-[10%] right-0 hidden items-center gap-4 rounded-2xl bg-white p-3 pr-5 text-ink shadow-2xl transition hover:-translate-y-1 sm:flex"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={img(hero.images[0], 200)} alt="" className="h-14 w-14 rounded-xl object-cover" />
@@ -113,6 +113,23 @@ export default async function Home() {
               </Link>
             )}
           </div>
+
+          {/* phones: bestseller card sits below the photos instead of on top of them */}
+          {hero && (
+            <Link
+              href={`/product/${hero.slug}`}
+              className="-mt-6 flex items-center gap-4 rounded-2xl border border-line bg-white p-3 pr-4 text-ink shadow-lg sm:hidden"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img(hero.images[0], 200)} alt="" className="h-14 w-14 shrink-0 rounded-xl object-cover" />
+              <div className="min-w-0 flex-1">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-gold-deep">Bestseller</p>
+                <p className="truncate font-display text-[16px] leading-tight">{hero.name}</p>
+                <p className="text-sm">{inr(hero.price)}</p>
+              </div>
+              <ArrowUpRight className="h-4 w-4 shrink-0" />
+            </Link>
+          )}
         </div>
 
         <div className="container-lux relative grid border-t border-line sm:grid-cols-3">

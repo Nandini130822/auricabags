@@ -49,9 +49,9 @@ export function Footer() {
           </p>
           <Newsletter />
         </div>
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 sm:gap-10">
           {cols.map((c) => (
-            <div key={c.title}>
+            <div key={c.title} className="min-w-0">
               <p className="eyebrow text-ivory/50">{c.title}</p>
               <ul className="mt-5 space-y-3 text-[14px]">
                 {c.links.map(([l, h]) => (
@@ -64,9 +64,9 @@ export function Footer() {
               </ul>
             </div>
           ))}
-          <div>
+          <div className="col-span-2 min-w-0 sm:col-span-1">
             <p className="eyebrow text-ivory/50">Studio</p>
-            <ul className="mt-5 space-y-3 text-[14px] text-ivory/80">
+            <ul className="mt-5 space-y-3 text-[14px] text-ivory/80 [overflow-wrap:anywhere]">
               <li className="flex gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />{SITE.address}</li>
               <li className="flex gap-2"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />{SITE.phone}</li>
               <li className="flex gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />{SITE.email}</li>
