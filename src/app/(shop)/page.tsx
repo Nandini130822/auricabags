@@ -10,19 +10,19 @@ import { SITE } from "@/lib/config";
 const U = (id: string) => `https://images.unsplash.com/photo-${id}`;
 
 const OCCASIONS = [
-  { n: "01", title: "The Wedding", sub: "Potlis & bridal clutches", slug: "wedding", image: U("1610173827043-9db50e0d8ef9") },
-  { n: "02", title: "Reception Night", sub: "Crystal & satin minaudières", slug: "reception", image: U("1776841818483-700f88aace44") },
-  { n: "03", title: "Sangeet & Mehendi", sub: "Colour, beads & tassels", slug: "sangeet", image: U("1617627143750-d86bc21e42bb") },
-  { n: "04", title: "Cocktail & Party", sub: "Metallics after dark", slug: "party", image: U("1742626181959-f6442aea029b") },
-  { n: "05", title: "Festive", sub: "Zari, silk & gold", slug: "festive", image: U("1610047614301-13c63f00c032") },
-  { n: "06", title: "Everyday", sub: "Polished daily companions", slug: "everyday", image: U("1758171692659-024183c2c272") },
+  { n: "01", title: "The Wedding", sub: "Potlis & bridal clutches", slug: "wedding", image: U("1784450691236-d970d91b58a9") },
+  { n: "02", title: "Reception Night", sub: "Crystal & satin minaudières", slug: "reception", image: U("1742626181963-1244929d2fdb") },
+  { n: "03", title: "Sangeet & Mehendi", sub: "Colour, beads & tassels", slug: "sangeet", image: U("1767771322982-8041f4a5da8e") },
+  { n: "04", title: "Cocktail & Party", sub: "Metallics after dark", slug: "party", image: U("1589363358751-ab05797e5629") },
+  { n: "05", title: "Festive", sub: "Zari, silk & gold", slug: "festive", image: U("1759064716592-3963a0881ff8") },
+  { n: "06", title: "Everyday", sub: "Polished daily companions", slug: "everyday", image: U("1598532163257-ae3c6b2524b6") },
 ];
 
 const INSTA = [
   "1742626181963-1244929d2fdb",
-  "1600685890506-593fdf55949b",
+  "1759064716592-3963a0881ff8",
   "1681747685985-a401c271156c",
-  "1790891819681-48168ab22b4e",
+  "1598552105309-9243044d2002",
   "1584917865442-de89df76afd3",
   "1768767115625-69d3c41f7bb1",
 ];
@@ -77,11 +77,11 @@ export default async function Home() {
           <div className="relative mx-auto h-[560px] w-full max-w-[520px] lg:h-[680px]">
             <div className="absolute right-0 top-0 h-[88%] w-[74%] overflow-hidden rounded-t-full border border-gold/30 p-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(U("1600685890506-593fdf55949b"), 1100)} alt="Bride carrying an Aurica potli" className="h-full w-full rounded-t-full object-cover" />
+              <img src={img(U("1787284461013-e58abaed4f78"), 1100)} alt="Embroidered Aurica frame bags" className="h-full w-full rounded-t-full object-cover" />
             </div>
             <div className="absolute bottom-0 left-0 h-[46%] w-[46%] overflow-hidden rounded-t-full border-[6px] border-ink">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(U("1742626181963-1244929d2fdb"), 700)} alt="Crystal clutch" className="h-full w-full object-cover" />
+              <img src={img(U("1783700549620-a6699881dc45"), 700)} alt="Crystal beaded clutch" className="h-full w-full object-cover" />
             </div>
             {hero && (
               <Link
@@ -173,7 +173,7 @@ export default async function Home() {
             <div className="lg:sticky lg:top-28">
               <div className="group relative aspect-[4/5.4] overflow-hidden rounded-[28px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img(U("1610047614301-13c63f00c032"), 1000)} alt="The Aurica edit" className="zoom-img h-full w-full object-cover" />
+                <img src={img(U("1681747685985-a401c271156c"), 1000)} alt="The Aurica edit" className="zoom-img h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-8 text-ivory sm:p-10">
                   <p className="eyebrow text-gold-soft">The Aurica Edit</p>
@@ -204,7 +204,7 @@ export default async function Home() {
           <Reveal className="relative order-2 h-[520px] lg:order-1 lg:h-[640px]">
             <div className="absolute left-0 top-0 h-[78%] w-[64%] overflow-hidden rounded-[28px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(U("1713425885188-f1daa057691f"), 900)} alt="Zari fabric" loading="lazy" className="h-full w-full object-cover" />
+              <img src={img(U("1713425885188-f1daa057691f"), 900)} alt="Aurica purses" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="absolute bottom-0 right-0 h-[62%] w-[52%] overflow-hidden rounded-t-full border-[10px] border-ivory">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -301,7 +301,7 @@ export default async function Home() {
       <section className="container-lux pb-24 lg:pb-32">
         <Reveal className="grain relative overflow-hidden rounded-[32px] bg-ink px-8 py-16 text-ivory sm:px-14 lg:py-24">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={img(U("1774141818089-d211d5bd01f9"), 1400)} alt="" className="absolute inset-0 h-full w-full object-cover opacity-25" />
+          <img src={img(U("1684407261522-48ad66a060e9"), 1400)} alt="" className="absolute inset-0 h-full w-full object-cover opacity-25" />
           <div className="relative grid items-end gap-10 lg:grid-cols-[1.4fr_1fr]">
             <div>
               <p className="eyebrow text-gold-soft">Single piece & wholesale</p>
