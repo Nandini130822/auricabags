@@ -16,8 +16,8 @@ export default function About() {
         </h1>
       </section>
       <section className="container-lux grid gap-6 pb-20 md:grid-cols-12">
-        <div className="overflow-hidden rounded-[28px] md:col-span-7"><img src={img(U("1787284461013-e58abaed4f78"), 1200)} alt="" className="h-full w-full object-cover" /></div>
-        <div className="overflow-hidden rounded-[18px] md:col-span-5"><img src={img(U("1784450691236-d970d91b58a9"), 800)} alt="" className="h-full w-full object-cover" /></div>
+        <div className="overflow-hidden rounded-[28px] md:col-span-7"><img src={img(U("1783700475749-6e6521a503fa"), 1200)} alt="Aurica white quilted clutch" className="h-full w-full object-cover" /></div>
+        <div className="overflow-hidden rounded-[18px] md:col-span-5"><img src="/images/insta/shell-mini-potli.webp" alt="Aurica shell mini potli" className="h-full w-full object-cover" /></div>
       </section>
       <section className="container-lux grid gap-16 pb-28 lg:grid-cols-2">
         <Reveal>

@@ -13,7 +13,7 @@
       "name": "Potli Bags",
       "slug": "potli-bags",
       "description": "Embroidered drawstring potlis made for mehendi, haldi and the big day.",
-      "image_url": "https://images.unsplash.com/photo-1784450691236-d970d91b58a9",
+      "image_url": "/images/insta/shell-mini-potli.webp",
       "sort_order": 2
     },
     {
@@ -156,8 +156,7 @@
       "is_featured": true,
       "is_new": true,
       "images": [
-        "/images/products/gold-zari-flower-bag.webp",
-        "https://images.unsplash.com/photo-1784450691236-d970d91b58a9"
+        "/images/products/gold-zari-flower-bag.webp"
       ],
       "description": "Our bestselling potli in raw silk, hand-embroidered with zari florals and finished with a beaded tassel drawstring. A wedding-season essential."
     },

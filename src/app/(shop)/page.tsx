@@ -249,7 +249,7 @@ export default async function Home() {
             </div>
             <div className="absolute bottom-0 right-0 h-[62%] w-[52%] overflow-hidden rounded-[18px] border-[10px] border-ivory">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(U("1784450691236-d970d91b58a9"), 700)} alt="Gold potli and heels" loading="lazy" className="h-full w-full object-cover" />
+              <img src={img("/images/insta/gold-navratri-bag.webp", 700)} alt="Aurica gold Navratri sling" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="absolute bottom-8 left-6 flex h-32 w-32 items-center justify-center rounded-full bg-ink text-center text-ivory">
               <p className="font-serif text-lg italic leading-tight">
