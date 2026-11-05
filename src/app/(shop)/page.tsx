@@ -144,12 +144,12 @@ export default async function Home() {
 
       {/* ───────────── MARQUEE ───────────── */}
       <div className="mt-10 bg-gold-deep sm:mt-14 lg:mt-16">
-        <div className="marquee group overflow-hidden py-4 sm:py-5" aria-label="Aurica promises">
+        <div className="marquee group overflow-hidden py-2.5 sm:py-3" aria-label="Aurica promises">
           <div className="flex w-max animate-marquee items-center whitespace-nowrap group-hover:[animation-play-state:paused]">
             {Array.from({ length: 2 }).flatMap((_, k) =>
               ["Handcrafted in Surat", "Single piece & wholesale", "Cash on delivery", "Free shipping above ₹1,999", "Easy 7-day exchange", "Made for every celebration"].map((t) => (
                 <span key={t + k} className="flex items-center">
-                  <span className="px-7 font-serif text-[20px] italic text-ivory sm:px-10 sm:text-[24px]">{t}</span>
+                  <span className="px-6 font-serif text-[16px] italic text-ivory sm:px-8 sm:text-[18px]">{t}</span>
                   <span className="text-[13px] text-gold-soft" aria-hidden>
                     ✦
                   </span>

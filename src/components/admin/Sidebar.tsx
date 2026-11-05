@@ -8,6 +8,7 @@ import {
   CreditCard,
   ExternalLink,
   LayoutDashboard,
+  LogOut,
   Menu,
   MessageSquareText,
   Package,
@@ -17,6 +18,7 @@ import {
   Users,
   X,
 } from "lucide-react";
+import { adminSignOut } from "@/app/actions/admin-auth";
 
 const NAV = [
   { href: "/admin", label: "Overview", icon: LayoutDashboard },
@@ -56,6 +58,14 @@ export function Sidebar({ badges }: { badges: Record<string, number> }) {
     </nav>
   );
 
+  const signOutButton = (
+    <form action={adminSignOut}>
+      <button className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-muted hover:text-ink">
+        <LogOut size={15} /> Sign out
+      </button>
+    </form>
+  );
+
   const brand = (
     <Link href="/admin" className="flex items-baseline gap-2">
       <span className="font-logo text-xl tracking-[0.18em]">AURICA</span>
@@ -69,9 +79,12 @@ export function Sidebar({ badges }: { badges: Record<string, number> }) {
       <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-line bg-white px-4 py-6 lg:flex print:hidden">
         <div className="mb-8 px-3">{brand}</div>
         {links}
-        <Link href="/" className="mt-auto flex items-center gap-2 px-3 py-2 text-sm text-muted hover:text-ink">
-          <ExternalLink size={15} /> View store
-        </Link>
+        <div className="mt-auto">
+          <Link href="/" className="flex items-center gap-2 px-3 py-2 text-sm text-muted hover:text-ink">
+            <ExternalLink size={15} /> View store
+          </Link>
+          {signOutButton}
+        </div>
       </aside>
 
       {/* mobile */}
@@ -87,6 +100,7 @@ export function Sidebar({ badges }: { badges: Record<string, number> }) {
           <Link href="/" className="mt-2 flex items-center gap-2 px-3 py-2 text-sm text-muted">
             <ExternalLink size={15} /> View store
           </Link>
+          {signOutButton}
         </div>
       )}
     </>

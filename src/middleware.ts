@@ -24,7 +24,15 @@ export async function middleware(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   const path = request.nextUrl.pathname;
-  if (!user && (path.startsWith("/account") || path.startsWith("/admin"))) {
+  const isAdminArea = path.startsWith("/admin") && !path.startsWith("/admin/login");
+  if (!user && isAdminArea) {
+    // admins have their own sign-in page, separate from the storefront login
+    const to = request.nextUrl.clone();
+    to.pathname = "/admin/login";
+    to.search = "";
+    return NextResponse.redirect(to);
+  }
+  if (!user && path.startsWith("/account")) {
     const to = request.nextUrl.clone();
     to.pathname = "/login";
     to.searchParams.set("next", path);

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldAlert } from "lucide-react";
 import { Sidebar } from "@/components/admin/Sidebar";
+import { adminSignOut } from "@/app/actions/admin-auth";
 import { isSupabaseConfigured } from "@/lib/config";
 import { getIsAdmin, getSessionUser } from "@/lib/data";
 import { adminOrders, adminReviews } from "@/lib/admin-data";
@@ -18,13 +19,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <ShieldAlert className="mx-auto text-gold" size={32} strokeWidth={1.5} />
           <h1 className="mt-4 font-display text-2xl">You don&apos;t have admin access</h1>
           <p className="mt-2 text-sm text-muted">
-            You&apos;re signed in as <b className="text-ink">{user?.email ?? "a guest"}</b>. To make this account an admin, run this
-            in Supabase → SQL Editor:
+            You&apos;re signed in as <b className="text-ink">{user?.email ?? "a guest"}</b>, which isn&apos;t an admin account.
           </p>
-          <pre className="mt-4 overflow-x-auto rounded-lg bg-ink p-3 text-left text-xs text-ivory">
-            {`update profiles set role = 'admin'\nwhere email = '${user?.email ?? "you@example.com"}';`}
-          </pre>
-          <Link href="/" className="mt-6 inline-block text-sm underline underline-offset-4">
+          <form action={adminSignOut} className="mt-6">
+            <button className="btn-dark w-full">Sign in with an admin account</button>
+          </form>
+          <Link href="/" className="mt-4 inline-block text-sm text-muted underline underline-offset-4">
             Back to the store
           </Link>
         </div>
