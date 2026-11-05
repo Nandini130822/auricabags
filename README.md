@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aurica Bags — e-commerce site
 
-## Getting Started
+Storefront, customer dashboard, and admin dashboard for **auricabags.com / auricabags.in**.
+Built with Next.js 15 (App Router), Tailwind CSS v4, and Supabase (Postgres, Auth, Storage).
 
-First, run the development server:
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+npm install
+npm run dev          # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If `.env.local` has no Supabase keys, the site runs in **demo mode**. Demo mode uses the sample catalogue,
+orders, customers, and reviews in memory, so every page works, including checkout and the admin.
+Anything you change resets when the server restarts. This mode is for showing the client the flow.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Requires Node 20+ (Node 22 recommended by Supabase).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Connect Supabase (go live)
 
-## Learn More
+1. Create a project at https://supabase.com, then open **SQL Editor**.
+2. Run `supabase/schema.sql`. This creates the tables, security policies, the coupon RPC, and the `products` image bucket.
+3. Run `supabase/seed.sql` to add the sample categories, products, and coupons. Skip it if you want an empty store.
+4. Copy `.env.example` to `.env.local` and fill in the values from **Project Settings → API**:
+   `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`.
+5. Restart `npm run dev`, sign in once on the site, then make yourself an admin:
+   ```sql
+   update public.profiles set role = 'admin' where email = 'you@example.com';
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## Google sign-in
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. In Google Cloud Console, go to **APIs & Services → Credentials → Create OAuth client ID** and choose Web application.
+   - Authorised JavaScript origins: `http://localhost:3000` and `https://auricabags.com`
+   - Authorised redirect URI: `https://<your-project>.supabase.co/auth/v1/callback`
+2. In Supabase, go to **Authentication → Providers → Google**. Enable it and paste the Client ID and Client Secret.
+3. In Supabase, go to **Authentication → URL Configuration**:
+   - Site URL: `https://auricabags.com`
+   - Redirect URLs: `http://localhost:3000/auth/callback`, `https://auricabags.com/auth/callback`, `https://auricabags.in/auth/callback`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Email magic-link sign-in works with no extra setup.
 
-## Deploy on Vercel
+## What's where
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Area | Path |
+|---|---|
+| Storefront (home, shop, product, cart, checkout) | `src/app/(shop)` |
+| Customer dashboard (orders and tracking, wishlist, addresses, profile) | `src/app/(shop)/account` |
+| Admin dashboard | `src/app/admin` (`/admin`) |
+| Storefront server actions (orders, coupons, reviews, demo payment) | `src/app/actions/shop.ts` |
+| Admin server actions | `src/app/actions/admin.ts` |
+| Data access, with Supabase or demo fallback | `src/lib/data.ts`, `src/lib/admin-data.ts` |
+| Sample catalogue (source for `seed.sql`) | `src/data/catalog.json` → `node scripts/gen-seed.mjs` |
+| Database schema and RLS | `supabase/schema.sql` |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Payments & delivery (demo)
+
+- **Payments:** checkout opens a payment sheet that looks like Razorpay's, in test mode. It can simulate a successful
+  or a failed payment and records a row in `payments`. To go live, replace `completeDemoPayment` with Razorpay
+  Orders, Checkout.js, and a signature-verified webhook.
+- **Delivery:** in the admin, open **Orders → order → Create shipment**. It gives courier quotes, generates an AWB, prints a label,
+  and has an "advance status" button that simulates courier webhooks. Customers see the tracking timeline in
+  their account. To go live, swap in the Shiprocket API (`/courier/serviceability`, `/orders/create/adhoc`, tracking webhooks).
+
+## Replacing the catalogue
+
+Product images are placeholder photos from Unsplash. When the client sends the real catalogue, you can either:
+- add products in **Admin → Products → New** (images upload to Supabase Storage), or
+- edit `src/data/catalog.json`, run `node scripts/gen-seed.mjs`, and re-run `seed.sql`.
+
+## Deploy
+
+Import this repo in Vercel (framework: Next.js, root directory: default). Add the same env vars, plus `NEXT_PUBLIC_SITE_URL=https://auricabags.com`.
+Point both domains at the project and pick one as primary, then redirect the other to it.
