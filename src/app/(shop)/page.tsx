@@ -176,17 +176,17 @@ export default async function Home() {
             </p>
           </Reveal>
         </div>
-        <div className="no-scrollbar mt-14 flex snap-x gap-5 overflow-x-auto px-4 pb-4 sm:px-8 lg:px-12">
+        <div className="no-scrollbar mt-12 flex snap-x gap-4 overflow-x-auto px-4 pb-4 sm:px-8 lg:px-12 xl:mx-auto xl:grid xl:max-w-[1440px] xl:grid-cols-6 xl:gap-5 xl:overflow-visible xl:pb-0">
           {OCCASIONS.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80} className="shrink-0 snap-start">
-              <Link href={`/shop?occasion=${o.slug}`} className="group block w-[72vw] sm:w-[340px]">
-                <div className="relative aspect-[3/4.3] overflow-hidden rounded-[18px] bg-cream">
+              <Link href={`/shop?occasion=${o.slug}`} className="group block w-[58vw] sm:w-[240px] xl:w-auto">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-[18px] bg-cream">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={img(o.image, 700)} alt={o.title} loading="lazy" className="zoom-img h-full w-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-6 text-ivory">
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-ivory sm:p-5">
                     <p className="text-[11px] tracking-[0.3em] text-gold-soft">{o.n}</p>
-                    <p className="mt-1 font-display text-[28px] leading-tight">{o.title}</p>
+                    <p className="mt-1 font-display text-[20px] leading-tight sm:text-[22px]">{o.title}</p>
                     <p className="mt-1 text-sm text-ivory/70">{o.sub}</p>
                   </div>
                 </div>
