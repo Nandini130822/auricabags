@@ -1,0 +1,139 @@
+{
+  "noor-crystal-clutch": {
+    "images": [
+      "/images/products/noor-crystal-clutch/1-champagne.webp",
+      "/images/products/noor-crystal-clutch/2-silver.webp"
+    ],
+    "colors": [
+      "Champagne",
+      "Silver"
+    ]
+  },
+  "gulabi-satin-box-clutch": {
+    "images": [
+      "/images/products/gulabi-satin-box-clutch/1-rose-pink.webp",
+      "/images/products/gulabi-satin-box-clutch/2-ivory.webp"
+    ],
+    "colors": [
+      "Rose Pink",
+      "Ivory"
+    ]
+  },
+  "midnight-envelope-clutch": {
+    "images": [
+      "/images/products/midnight-envelope-clutch/1-black.webp",
+      "/images/products/midnight-envelope-clutch/2-bronze.webp"
+    ],
+    "colors": [
+      "Black",
+      "Bronze"
+    ]
+  },
+  "zari-heritage-potli": {
+    "images": [
+      "/images/products/zari-heritage-potli/1-gold.webp",
+      "/images/products/zari-heritage-potli/2-detail.webp"
+    ],
+    "colors": [
+      "Gold"
+    ]
+  },
+  "mehfil-beaded-potli": {
+    "images": [
+      "/images/products/mehfil-beaded-potli/1-rani-pink.webp",
+      "/images/products/mehfil-beaded-potli/2-emerald.webp",
+      "/images/products/mehfil-beaded-potli/3-ivory.webp"
+    ],
+    "colors": [
+      "Rani Pink",
+      "Emerald",
+      "Ivory"
+    ]
+  },
+  "rouge-top-handle-bag": {
+    "images": [
+      "/images/products/rouge-top-handle-bag/1-rouge.webp",
+      "/images/products/rouge-top-handle-bag/2-black.webp"
+    ],
+    "colors": [
+      "Rouge",
+      "Black"
+    ]
+  },
+  "ivory-quilted-flap-bag": {
+    "images": [
+      "/images/products/ivory-quilted-flap-bag/1-ivory.webp",
+      "/images/products/ivory-quilted-flap-bag/2-beige.webp"
+    ],
+    "colors": [
+      "Ivory",
+      "Beige"
+    ]
+  },
+  "saffron-mini-tote": {
+    "images": [
+      "/images/products/saffron-mini-tote/1-saffron.webp",
+      "/images/products/saffron-mini-tote/2-lilac.webp"
+    ],
+    "colors": [
+      "Saffron",
+      "Lilac"
+    ]
+  },
+  "blush-chevron-crossbody": {
+    "images": [
+      "/images/products/blush-chevron-crossbody/1-blush.webp",
+      "/images/products/blush-chevron-crossbody/2-tan.webp"
+    ],
+    "colors": [
+      "Blush",
+      "Tan"
+    ]
+  },
+  "metallic-chain-sling": {
+    "images": [
+      "/images/products/metallic-chain-sling/1-teal.webp",
+      "/images/products/metallic-chain-sling/2-graphite.webp"
+    ],
+    "colors": [
+      "Teal",
+      "Graphite"
+    ]
+  },
+  "onyx-shoulder-bag": {
+    "images": [
+      "/images/products/onyx-shoulder-bag/1-black.webp",
+      "/images/products/onyx-shoulder-bag/2-detail.webp"
+    ],
+    "colors": [
+      "Black"
+    ]
+  },
+  "blush-marble-mini": {
+    "images": [
+      "/images/products/blush-marble-mini/1-blush.webp",
+      "/images/products/blush-marble-mini/2-detail.webp"
+    ],
+    "colors": [
+      "Blush"
+    ]
+  },
+  "cognac-everyday-purse": {
+    "images": [
+      "/images/products/cognac-everyday-purse/1-cognac.webp",
+      "/images/products/cognac-everyday-purse/2-detail.webp"
+    ],
+    "colors": [
+      "Cognac"
+    ]
+  },
+  "pearl-white-wristlet": {
+    "images": [
+      "/images/products/pearl-white-wristlet/1-pearl-white.webp",
+      "/images/products/pearl-white-wristlet/2-detail.webp"
+    ],
+    "colors": [
+      "Pearl White"
+    ]
+  }
+}

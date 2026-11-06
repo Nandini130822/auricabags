@@ -1,10 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { img } from "@/lib/format";
+
+/** Fired by ProductBuy when a colour swatch is picked; images are stored in colour order. */
+export const COLOR_EVENT = "aurica:color";
 
 export function ProductGallery({ images, name }: { images: string[]; name: string }) {
   const [active, setActive] = useState(0);
   const list = images.length ? images : [""];
+
+  useEffect(() => {
+    const on = (e: Event) => {
+      const i = (e as CustomEvent<number>).detail;
+      if (i >= 0 && i < list.length) setActive(i);
+    };
+    window.addEventListener(COLOR_EVENT, on);
+    return () => window.removeEventListener(COLOR_EVENT, on);
+  }, [list.length]);
   return (
     <div className="grid gap-4 lg:grid-cols-[88px_1fr]">
       <div className="no-scrollbar order-2 flex gap-3 overflow-x-auto lg:order-1 lg:flex-col">

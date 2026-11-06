@@ -90,7 +90,7 @@ export default async function Home() {
             {hero && (
               <Link
                 href={`/product/${hero.slug}`}
-                className="absolute bottom-[10%] right-0 hidden items-center gap-4 rounded-2xl bg-white p-3 pr-5 text-ink shadow-2xl transition hover:-translate-y-1 sm:flex"
+                className="absolute -bottom-[1%] right-0 hidden items-center gap-4 rounded-2xl bg-white p-3 pr-5 text-ink shadow-2xl transition hover:-translate-y-1 sm:flex"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={img(hero.images[0], 200)} alt="" className="h-14 w-14 rounded-xl object-cover" />

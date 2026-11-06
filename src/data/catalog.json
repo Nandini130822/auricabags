@@ -73,8 +73,8 @@
       "is_featured": true,
       "is_new": true,
       "images": [
-        "/images/products/gold-bow-clutch.webp",
-        "/images/products/silver-pleated-clutch.webp"
+        "/images/products/noor-crystal-clutch/1-champagne.webp",
+        "/images/products/noor-crystal-clutch/2-silver.webp"
       ],
       "description": "A jewel of a clutch, hand-set with crystals that catch every light at the reception. Detachable chain, magnetic clasp and a satin-lined interior that fits your phone, lipstick and keys."
     },
@@ -101,8 +101,8 @@
       "is_featured": true,
       "is_new": false,
       "images": [
-        "https://images.unsplash.com/photo-1789110854562-6bff8f621b3b",
-        "https://images.unsplash.com/photo-1789110854836-a7e790d83736"
+        "/images/products/gulabi-satin-box-clutch/1-rose-pink.webp",
+        "/images/products/gulabi-satin-box-clutch/2-ivory.webp"
       ],
       "description": "A soft-pink box clutch in duchess satin with a sculpted gold clasp. Made to match lehengas and gowns alike."
     },
@@ -128,8 +128,8 @@
       "is_featured": false,
       "is_new": false,
       "images": [
-        "/images/products/black-sequin-clutch.webp",
-        "https://images.unsplash.com/photo-1749294435694-ce3c586591e6"
+        "/images/products/midnight-envelope-clutch/1-black.webp",
+        "/images/products/midnight-envelope-clutch/2-bronze.webp"
       ],
       "description": "A slim envelope clutch that slips under the arm. Clean lines, a hidden magnetic flap, and enough room for the essentials."
     },
@@ -143,8 +143,7 @@
       "stock": 40,
       "sku": "AUR-PT-001",
       "colors": [
-        "Gold",
-        "Maroon"
+        "Gold"
       ],
       "occasions": [
         "Wedding",
@@ -156,7 +155,8 @@
       "is_featured": true,
       "is_new": true,
       "images": [
-        "/images/products/gold-zari-flower-bag.webp"
+        "/images/products/zari-heritage-potli/1-gold.webp",
+        "/images/products/zari-heritage-potli/2-detail.webp"
       ],
       "description": "Our bestselling potli in raw silk, hand-embroidered with zari florals and finished with a beaded tassel drawstring. A wedding-season essential."
     },
@@ -170,9 +170,9 @@
       "stock": 55,
       "sku": "AUR-PT-002",
       "colors": [
+        "Rani Pink",
         "Emerald",
-        "Ivory",
-        "Rani Pink"
+        "Ivory"
       ],
       "occasions": [
         "Mehendi",
@@ -184,8 +184,9 @@
       "is_featured": false,
       "is_new": true,
       "images": [
-        "https://images.unsplash.com/photo-1598552105309-9243044d2002",
-        "https://images.unsplash.com/photo-1759064716592-3963a0881ff8"
+        "/images/products/mehfil-beaded-potli/1-rani-pink.webp",
+        "/images/products/mehfil-beaded-potli/2-emerald.webp",
+        "/images/products/mehfil-beaded-potli/3-ivory.webp"
       ],
       "description": "Plush velvet potli with dense glass-bead work and a pearl-strung handle. Lightweight, roomy, and made to dance in."
     },
@@ -212,7 +213,8 @@
       "is_featured": true,
       "is_new": false,
       "images": [
-        "https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+        "/images/products/rouge-top-handle-bag/1-rouge.webp",
+        "/images/products/rouge-top-handle-bag/2-black.webp"
       ],
       "description": "A confident red top-handle with a structured body and detachable shoulder strap. The bag that finishes the outfit."
     },
@@ -237,7 +239,8 @@
       "is_featured": false,
       "is_new": false,
       "images": [
-        "https://images.unsplash.com/photo-1705909237050-7a7625b47fac"
+        "/images/products/onyx-shoulder-bag/1-black.webp",
+        "/images/products/onyx-shoulder-bag/2-detail.webp"
       ],
       "description": "Our forever-black shoulder bag with a woven gold chain. Day meetings to dinner without a second thought."
     },
@@ -264,8 +267,8 @@
       "is_featured": true,
       "is_new": true,
       "images": [
-        "/images/products/ivory-pearl-baguette.webp",
-        "https://images.unsplash.com/photo-1722510825571-8cdd1fe98ba4"
+        "/images/products/ivory-quilted-flap-bag/1-ivory.webp",
+        "/images/products/ivory-quilted-flap-bag/2-beige.webp"
       ],
       "description": "Diamond-quilted in soft ivory with a charm detail. A quiet-luxury piece that pairs with pastels and whites."
     },
@@ -291,8 +294,8 @@
       "is_featured": false,
       "is_new": true,
       "images": [
-        "https://images.unsplash.com/photo-1640901555383-7335ec5a6476",
-        "https://images.unsplash.com/photo-1761646238287-3a278ecc0c86"
+        "/images/products/saffron-mini-tote/1-saffron.webp",
+        "/images/products/saffron-mini-tote/2-lilac.webp"
       ],
       "description": "A sunny mini tote with a rolled handle — a pop of colour for haldi mornings and festive brunches."
     },
@@ -317,8 +320,8 @@
       "is_featured": true,
       "is_new": false,
       "images": [
-        "https://images.unsplash.com/photo-1681747685985-a401c271156c",
-        "https://images.unsplash.com/photo-1789110854562-6bff8f621b3b"
+        "/images/products/blush-marble-mini/1-blush.webp",
+        "/images/products/blush-marble-mini/2-detail.webp"
       ],
       "description": "A sculptural blush mini with croc embossing and a polished top-handle. Small enough to charm, big enough for the essentials."
     },
@@ -343,8 +346,8 @@
       "is_featured": false,
       "is_new": false,
       "images": [
-        "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d",
-        "https://images.unsplash.com/photo-1523779105320-d1cd346ff52b"
+        "/images/products/blush-chevron-crossbody/1-blush.webp",
+        "/images/products/blush-chevron-crossbody/2-tan.webp"
       ],
       "description": "A blush crossbody with a tonal chevron panel, chain strap and zip compartment. Hands-free and festival-ready."
     },
@@ -359,7 +362,7 @@
       "sku": "AUR-SL-002",
       "colors": [
         "Teal",
-        "Silver"
+        "Graphite"
       ],
       "occasions": [
         "Party",
@@ -370,22 +373,22 @@
       "is_featured": true,
       "is_new": false,
       "images": [
-        "https://images.unsplash.com/photo-1594223274512-ad4803739b7c"
+        "/images/products/metallic-chain-sling/1-teal.webp",
+        "/images/products/metallic-chain-sling/2-graphite.webp"
       ],
       "description": "A liquid-metal sling with a fine chain strap. It catches the light on the dance floor and goes with every colour."
     },
     {
       "id": "a1000000-0000-4000-8000-000000000013",
-      "name": "Cognac Everyday Purse",
+      "name": "Cognac Woven Everyday Bag",
       "slug": "cognac-everyday-purse",
-      "category_slug": "purses-wallets",
+      "category_slug": "handbags",
       "price": 1190,
       "compare_at_price": null,
       "stock": 35,
       "sku": "AUR-PW-001",
       "colors": [
-        "Cognac",
-        "Black"
+        "Cognac"
       ],
       "occasions": [
         "Everyday"
@@ -395,10 +398,10 @@
       "is_featured": false,
       "is_new": false,
       "images": [
-        "https://images.unsplash.com/photo-1691480150204-66dd1eb77391",
-        "https://images.unsplash.com/photo-1691480250099-a63081ecfcb8"
+        "/images/products/cognac-everyday-purse/1-cognac.webp",
+        "/images/products/cognac-everyday-purse/2-detail.webp"
       ],
-      "description": "A cognac zip-around purse with twelve card slots and a coin pocket. Organised, elegant, everyday."
+      "description": "Hand-woven cognac leather with a gold chain strap. Roomy, soft and polished — an everyday bag that dresses up for evenings."
     },
     {
       "id": "a1000000-0000-4000-8000-000000000014",
@@ -421,8 +424,8 @@
       "is_featured": false,
       "is_new": true,
       "images": [
-        "/images/products/pearl-frame-clutch.webp",
-        "https://images.unsplash.com/photo-1783700475749-6e6521a503fa"
+        "/images/products/pearl-white-wristlet/1-pearl-white.webp",
+        "/images/products/pearl-white-wristlet/2-detail.webp"
       ],
       "description": "A pearl-finish wristlet that doubles as a slim clutch. A favourite for bridesmaids and bridal trousseaus."
     }

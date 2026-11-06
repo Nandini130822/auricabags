@@ -2,6 +2,7 @@
 import { useState, useTransition } from "react";
 import { Heart, Minus, Plus, ShieldCheck, Truck, RefreshCcw } from "lucide-react";
 import { useCart } from "./CartProvider";
+import { COLOR_EVENT } from "./ProductGallery";
 import { toggleWishlist } from "@/app/actions/shop";
 import { discountPct, inr } from "@/lib/format";
 import type { Product } from "@/lib/types";
@@ -45,7 +46,11 @@ export function ProductBuy({ product: p }: { product: Product }) {
             {p.colors.map((c) => (
               <button
                 key={c}
-                onClick={() => setColor(c)}
+                onClick={() => {
+                  setColor(c);
+                  // photos are stored in colour order — show the matching one
+                  if (p.colors.length > 1) window.dispatchEvent(new CustomEvent(COLOR_EVENT, { detail: p.colors.indexOf(c) }));
+                }}
                 aria-label={c}
                 title={c}
                 className={`h-9 w-9 rounded-full border-2 p-0.5 transition ${color === c ? "border-ink" : "border-transparent hover:border-line"}`}
@@ -70,7 +75,7 @@ export function ProductBuy({ product: p }: { product: Product }) {
         <button
           disabled={soldOut}
           onClick={() =>
-            add({ productId: p.id, slug: p.slug, name: p.name, image: p.images[0] ?? "", price: p.price, color, quantity: qty, stock: p.stock })
+            add({ productId: p.id, slug: p.slug, name: p.name, image: p.images[Math.max(0, p.colors.indexOf(color ?? ""))] ?? p.images[0] ?? "", price: p.price, color, quantity: qty, stock: p.stock })
           }
           className="btn-dark flex-1"
         >
