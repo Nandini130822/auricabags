@@ -17,8 +17,8 @@
   --color-rose: #b4574a;
 
   --font-sans: var(--font-jost), system-ui, sans-serif;
-  --font-display: var(--font-bodoni), "Didot", "Times New Roman", serif;   /* Bodoni Moda */
-  --font-serif: var(--font-bodoni), "Didot", "Times New Roman", serif;     /* Bodoni Moda italic */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-logo: var(--font-marcellus), "Times New Roman", serif;
 
   --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
@@ -50,7 +50,8 @@ body {
     @apply text-[11px] uppercase tracking-[0.28em] text-muted font-medium;
   }
   .h-display {
-    @apply font-display font-normal leading-[1.05] tracking-[-0.01em];
+    @apply font-display font-normal leading-[1.08] tracking-[-0.015em];
+    font-variation-settings: "SOFT" 50;
   }
   .container-lux {
     @apply mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-12;

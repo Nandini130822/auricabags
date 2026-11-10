@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Jost, Marcellus } from "next/font/google";
+import { Fraunces, Jost, Marcellus } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/config";
 
@@ -7,12 +7,12 @@ import { SITE } from "@/lib/config";
 const jost = Jost({ subsets: ["latin"], variable: "--font-jost", weight: ["300", "400", "500", "600"] });
 // Logo wordmark only (matches the Aurica logo lettering)
 const marcellus = Marcellus({ subsets: ["latin"], variable: "--font-marcellus", weight: "400" });
-// Headings + italic accents: high-contrast fashion serif, with optical sizing for small sizes
-const bodoni = Bodoni_Moda({
+// Headings + italic accents: premium serif with sturdy, even strokes (readable at every size)
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-bodoni",
+  variable: "--font-fraunces",
   style: ["normal", "italic"],
-  axes: ["opsz"],
+  axes: ["opsz", "SOFT"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jost.variable} ${marcellus.variable} ${bodoni.variable}`}>
+    <html lang="en" className={`${jost.variable} ${marcellus.variable} ${fraunces.variable}`}>
       <body className="min-h-screen">{children}</body>
     </html>
   );
