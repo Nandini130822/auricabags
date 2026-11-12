@@ -157,7 +157,7 @@ export default async function Home() {
       </div>
 
       {/* ───────────── SHOP BY OCCASION ───────────── */}
-      <section className="py-16 lg:py-20">
+      <section className="py-12 lg:py-16">
         <div className="container-lux">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
@@ -196,7 +196,7 @@ export default async function Home() {
       </section>
 
       {/* ───────────── THE EDIT ───────────── */}
-      <section className="bg-cream/60 py-16 lg:py-20">
+      <section className="bg-cream/60 py-12 lg:py-16">
         <div className="container-lux">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -240,7 +240,7 @@ export default async function Home() {
       </section>
 
       {/* ───────────── STORY ───────────── */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 lg:py-16">
         <div className="container-lux grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal className="relative order-2 h-[440px] sm:h-[500px] lg:order-1 lg:h-[560px]">
             <div className="absolute left-[5%] top-[4%] h-[80%] w-[62%] rounded-[24px] border border-gold/40" />
@@ -285,7 +285,7 @@ export default async function Home() {
       </section>
 
       {/* ───────────── CATEGORIES ───────────── */}
-      <section className="pb-16 lg:pb-20">
+      <section className="pb-12 lg:pb-16">
         <div className="container-lux">
           <Reveal className="flex items-end justify-between gap-6">
             <h2 className="h-display text-[clamp(36px,4vw,56px)]">Explore the house</h2>
@@ -316,7 +316,7 @@ export default async function Home() {
       </section>
 
       {/* ───────────── NEW ARRIVALS ───────────── */}
-      <section className="border-t border-line py-16 lg:py-20">
+      <section className="border-t border-line py-12 lg:py-16">
         <div className="container-lux flex items-end justify-between gap-6">
           <Reveal>
             <p className="eyebrow">Just landed</p>
@@ -336,7 +336,7 @@ export default async function Home() {
       </section>
 
       {/* ───────────── WHOLESALE BAND ───────────── */}
-      <section className="container-lux pb-16 lg:pb-20">
+      <section className="container-lux pb-12 lg:pb-16">
         <Reveal className="relative grid items-center gap-10 overflow-hidden rounded-[32px] border border-line bg-cream px-8 py-12 sm:px-14 lg:grid-cols-[1.3fr_1fr] lg:py-16">
           <div>
             <p className="eyebrow text-gold-deep">Single piece & wholesale</p>
@@ -367,7 +367,7 @@ export default async function Home() {
 
       {/* ───────────── REVIEWS ───────────── */}
       {reviews.length > 0 && (
-        <section className="bg-cream/60 py-16 lg:py-20">
+        <section className="bg-cream/60 py-12 lg:py-16">
           <div className="container-lux">
             <Reveal className="text-center">
               <p className="eyebrow">Kind words</p>
@@ -401,7 +401,7 @@ export default async function Home() {
       )}
 
       {/* ───────────── INSTAGRAM ───────────── */}
-      <section className="py-16 lg:py-20">
+      <section className="py-12 lg:py-16">
         <div className="container-lux">
           <div className="flex flex-col items-center text-center">
             <Instagram className="h-6 w-6 text-gold" strokeWidth={1.4} />
