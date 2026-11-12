@@ -44,10 +44,9 @@ export default async function Shop({ searchParams }: { searchParams: Promise<SP>
   const title = cat?.name ?? (sp.occasion ? `The ${sp.occasion[0].toUpperCase()}${sp.occasion.slice(1)} Edit` : sp.q ? `“${sp.q}”` : "All Bags");
   const desc = cat?.description ?? "Clutches, potlis and handbags hand-finished for every celebration.";
 
-  // header collage: the collection's own photo, plus a bag from the results that isn't the same photo
+  // header photo for this collection
   const heroImage =
     cat?.image_url ?? (sp.occasion ? OCCASION_IMAGE[sp.occasion.toLowerCase()] : undefined) ?? "/images/hero/pearl-beaded-bag.webp";
-  const sideImage = products.map((p) => p.images[0]).find((u) => u && u !== heroImage) ?? null;
 
   const href = (patch: Partial<SP>) => {
     const next = { ...sp, ...patch };
@@ -68,19 +67,10 @@ export default async function Shop({ searchParams }: { searchParams: Promise<SP>
             <h1 className="h-display mt-4 text-[clamp(40px,5.4vw,80px)]">{title}</h1>
             <p className="mt-4 max-w-lg text-muted">{desc}</p>
           </div>
-          {/* two-photo collage: the collection's photo + a bag from it */}
-          <div className="relative hidden h-[300px] lg:block" aria-hidden>
-            <div className="absolute right-[40%] top-[6%] h-[88%] w-[56%] rounded-[22px] border border-gold/40" />
-            <div className="absolute right-[43%] top-0 h-[88%] w-[56%] overflow-hidden rounded-[22px] bg-sand shadow-[0_24px_60px_-30px_rgba(17,17,17,0.45)]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(heroImage, 800)} alt="" className="h-full w-full object-cover" />
-            </div>
-            {sideImage && (
-              <div className="absolute bottom-0 right-0 h-[80%] w-[38%] rounded-[20px] bg-white p-1.5 shadow-[0_24px_50px_-25px_rgba(17,17,17,0.5)]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img(sideImage, 600)} alt="" className="h-full w-full rounded-[15px] object-cover" />
-              </div>
-            )}
+          {/* one clean photo for the collection */}
+          <div className="hidden h-[280px] overflow-hidden rounded-[22px] bg-sand lg:block" aria-hidden>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={img(heroImage, 1200)} alt="" className="h-full w-full object-cover" />
           </div>
         </div>
       </section>

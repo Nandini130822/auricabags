@@ -41,9 +41,6 @@ export default async function Home() {
     <>
       {/* ───────────── HERO ───────────── */}
       <section className="relative overflow-hidden bg-ivory">
-        {/* soft sand panel behind the image composition */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] bg-cream lg:block" />
-        <div className="pointer-events-none absolute right-[18%] top-24 hidden h-72 w-72 rounded-full bg-gold-soft/30 blur-[90px] lg:block" />
 
         <div className="container-lux relative grid items-center gap-14 pb-16 pt-10 lg:min-h-[calc(100svh-112px)] lg:grid-cols-[1.05fr_1fr] lg:pb-10 lg:pt-6">
           <div className="animate-fade-up">
@@ -81,9 +78,7 @@ export default async function Home() {
           </div>
 
           <div className="relative mx-auto h-[520px] w-full max-w-[540px] sm:h-[600px] lg:h-[660px]">
-            {/* thin outline frame, offset behind the main image */}
-            <div className="absolute right-[5%] top-[2%] h-[88%] w-[80%] rounded-[18px] border border-gold/50" />
-            <div className="absolute right-[9%] top-[6%] h-[88%] w-[80%] overflow-hidden rounded-[18px] bg-sand shadow-[0_30px_80px_-30px_rgba(17,17,17,0.3)]">
+            <div className="absolute inset-x-[4%] top-0 h-[94%] overflow-hidden rounded-[20px] bg-sand">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/hero/pearl-beaded-bag.webp" alt="Aurica pearl-beaded evening bag" className="h-full w-full object-cover" fetchPriority="high" />
             </div>
@@ -242,15 +237,10 @@ export default async function Home() {
       {/* ───────────── STORY ───────────── */}
       <section className="py-12 lg:py-16">
         <div className="container-lux grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <Reveal className="relative order-2 h-[440px] sm:h-[500px] lg:order-1 lg:h-[560px]">
-            <div className="absolute left-[5%] top-[4%] h-[80%] w-[62%] rounded-[24px] border border-gold/40" />
-            <div className="absolute left-0 top-0 h-[80%] w-[62%] overflow-hidden rounded-[24px] bg-sand shadow-[0_30px_70px_-35px_rgba(17,17,17,0.45)]">
+          <Reveal className="order-2 lg:order-1">
+            <div className="aspect-[4/5] overflow-hidden rounded-[22px] bg-sand lg:aspect-auto lg:h-[560px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(U("1783700549620-a6699881dc45"), 1000)} alt="A crystal-beaded Aurica clutch carried at a celebration" loading="lazy" className="h-full w-full object-cover" />
-            </div>
-            <div className="absolute bottom-0 right-0 h-[58%] w-[46%] rounded-[22px] bg-white p-2 shadow-[0_30px_60px_-28px_rgba(17,17,17,0.5)]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img("/images/insta/gold-navratri-bag.webp", 700)} alt="Aurica gold Navratri sling" loading="lazy" className="h-full w-full rounded-[16px] object-cover" />
+              <img src={img(U("1783700549620-a6699881dc45"), 1200)} alt="A crystal-beaded Aurica clutch carried at a celebration" loading="lazy" className="h-full w-full object-cover" />
             </div>
           </Reveal>
           <Reveal className="order-1 lg:order-2" delay={120}>
@@ -356,7 +346,6 @@ export default async function Home() {
             </div>
           </div>
           <div className="relative mx-auto h-[340px] w-full max-w-[360px] lg:h-[420px]">
-            <div className="absolute inset-0 translate-x-3 -translate-y-3 rounded-[18px] border border-gold/50" />
             <div className="absolute inset-0 overflow-hidden rounded-[18px] bg-sand">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img(U("1767771322982-8041f4a5da8e"), 900)} alt="Embroidered Aurica bags on display" loading="lazy" className="h-full w-full object-cover" />
