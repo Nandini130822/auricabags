@@ -14,7 +14,7 @@ const OCCASIONS = [
   { n: "01", title: "The Wedding", sub: "Potlis & bridal clutches", slug: "wedding", image: "/images/products/gold-zari-flower-bag.webp" },
   { n: "02", title: "Reception Night", sub: "Crystal & satin minaudières", slug: "reception", image: "/images/products/pearl-frame-clutch.webp" },
   { n: "03", title: "Sangeet & Mehendi", sub: "Colour, beads & tassels", slug: "sangeet", image: U("1767771322982-8041f4a5da8e") },
-  { n: "04", title: "Cocktail & Party", sub: "Metallics after dark", slug: "party", image: "/images/products/black-sequin-clutch.webp" },
+  { n: "04", title: "Cocktail & Party", sub: "Metallics after dark", slug: "party", image: "/images/products/midnight-envelope-clutch/1-black.webp" },
   { n: "05", title: "Festive", sub: "Zari, silk & gold", slug: "festive", image: U("1759064716592-3963a0881ff8") },
   { n: "06", title: "Everyday", sub: "Polished daily companions", slug: "everyday", image: U("1598532163257-ae3c6b2524b6") },
 ];
@@ -157,22 +157,25 @@ export default async function Home() {
       </div>
 
       {/* ───────────── SHOP BY OCCASION ───────────── */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 lg:py-20">
         <div className="container-lux">
-          <Reveal className="grid items-end gap-6 lg:grid-cols-2">
-            <div>
+          <Reveal className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-2xl">
               <p className="eyebrow">Shop by occasion</p>
-              <h2 className="h-display mt-5 text-[clamp(40px,5vw,72px)]">
+              <h2 className="h-display mt-4 text-[clamp(36px,4.4vw,60px)]">
                 One bag for every <span className="font-serif italic text-gold-deep">ceremony.</span>
               </h2>
+              <p className="mt-4 max-w-lg text-muted">
+                From the first haldi morning to the last reception dance — each edit is styled for the outfits,
+                lights and moments of that day.
+              </p>
             </div>
-            <p className="max-w-md text-muted lg:justify-self-end">
-              From the first haldi morning to the last reception dance — each edit is styled for the outfits,
-              lights and moments of that day.
-            </p>
+            <Link href="/shop" className="link-arrow">
+              All occasions <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </Reveal>
         </div>
-        <div className="no-scrollbar mt-12 flex snap-x gap-4 overflow-x-auto px-4 pb-4 sm:px-8 lg:px-12 xl:mx-auto xl:grid xl:max-w-[1440px] xl:grid-cols-6 xl:gap-5 xl:overflow-visible xl:pb-0">
+        <div className="no-scrollbar mt-10 flex snap-x gap-4 overflow-x-auto px-4 pb-4 sm:px-8 lg:px-12 xl:mx-auto xl:grid xl:max-w-[1440px] xl:grid-cols-6 xl:gap-5 xl:overflow-visible xl:pb-0">
           {OCCASIONS.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80} className="shrink-0 snap-start">
               <Link href={`/shop?occasion=${o.slug}`} className="group block w-[58vw] sm:w-[240px] xl:w-auto">
@@ -193,7 +196,7 @@ export default async function Home() {
       </section>
 
       {/* ───────────── THE EDIT ───────────── */}
-      <section className="bg-cream/60 py-24 lg:py-32">
+      <section className="bg-cream/60 py-16 lg:py-20">
         <div className="container-lux">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -207,16 +210,17 @@ export default async function Home() {
             </Link>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 lg:grid-cols-2 lg:gap-6">
+          {/* phones: big image + 2x2 · tablets: big banner + 4 in a row · laptops: big image + 4 cards in ONE row */}
+          <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 xl:grid-cols-6 xl:gap-x-5">
             {/* one big feature image */}
-            <Reveal className="h-full">
-              <Link href="/shop?sort=featured" className="group relative block h-full min-h-[440px] overflow-hidden rounded-[20px] bg-sand">
+            <Reveal className="col-span-2 md:col-span-4 xl:col-span-2">
+              <Link href="/shop?sort=featured" className="group relative block aspect-[16/10] overflow-hidden rounded-[20px] bg-sand md:aspect-[21/8] xl:aspect-auto xl:h-full">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={img(U("1681747685985-a401c271156c"), 1200)} alt="The Aurica edit" className="zoom-img absolute inset-0 h-full w-full object-cover" />
-                <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-4 rounded-2xl bg-ivory/95 px-6 py-5 backdrop-blur sm:right-auto sm:min-w-[320px]">
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4 rounded-2xl bg-ivory/95 px-5 py-4 backdrop-blur">
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.24em] text-gold-deep">Bestsellers</p>
-                    <p className="mt-1 font-display text-[22px] leading-tight">The pieces everyone gifts</p>
+                    <p className="mt-1 font-display text-[19px] leading-tight">The pieces everyone gifts</p>
                   </div>
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-ivory transition group-hover:bg-gold-deep">
                     <ArrowUpRight className="h-4 w-4" />
@@ -225,29 +229,28 @@ export default async function Home() {
               </Link>
             </Reveal>
 
-            {/* four product cards, 2 x 2 */}
-            <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-5">
-              {featured.slice(0, 4).map((p, i) => (
-                <Reveal key={p.id} delay={i * 80}>
-                  <ProductCard p={p} />
-                </Reveal>
-              ))}
-            </div>
+            {/* four product cards */}
+            {featured.slice(0, 4).map((p, i) => (
+              <Reveal key={p.id} delay={i * 80}>
+                <ProductCard p={p} />
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ───────────── STORY ───────────── */}
-      <section className="py-24 lg:py-36">
-        <div className="container-lux grid items-center gap-16 lg:grid-cols-2">
-          <Reveal className="relative order-2 h-[520px] lg:order-1 lg:h-[640px]">
-            <div className="absolute left-0 top-0 h-[78%] w-[64%] overflow-hidden rounded-[28px]">
+      <section className="py-16 lg:py-24">
+        <div className="container-lux grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <Reveal className="relative order-2 h-[440px] sm:h-[500px] lg:order-1 lg:h-[560px]">
+            <div className="absolute left-[5%] top-[4%] h-[80%] w-[62%] rounded-[24px] border border-gold/40" />
+            <div className="absolute left-0 top-0 h-[80%] w-[62%] overflow-hidden rounded-[24px] bg-sand shadow-[0_30px_70px_-35px_rgba(17,17,17,0.45)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(U("1713425885188-f1daa057691f"), 900)} alt="Aurica purses" loading="lazy" className="h-full w-full object-cover" />
+              <img src={img(U("1783700549620-a6699881dc45"), 1000)} alt="A crystal-beaded Aurica clutch carried at a celebration" loading="lazy" className="h-full w-full object-cover" />
             </div>
-            <div className="absolute bottom-0 right-0 h-[62%] w-[52%] overflow-hidden rounded-[18px] border-[10px] border-ivory">
+            <div className="absolute bottom-0 right-0 h-[58%] w-[46%] rounded-[22px] bg-white p-2 shadow-[0_30px_60px_-28px_rgba(17,17,17,0.5)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img("/images/insta/gold-navratri-bag.webp", 700)} alt="Aurica gold Navratri sling" loading="lazy" className="h-full w-full object-cover" />
+              <img src={img("/images/insta/gold-navratri-bag.webp", 700)} alt="Aurica gold Navratri sling" loading="lazy" className="h-full w-full rounded-[16px] object-cover" />
             </div>
           </Reveal>
           <Reveal className="order-1 lg:order-2" delay={120}>
@@ -256,13 +259,13 @@ export default async function Home() {
               Surat&apos;s textile heritage,<br />
               <span className="font-serif italic text-gold-deep">held in your hand.</span>
             </h2>
-            <p className="mt-8 max-w-lg text-[16px] leading-relaxed text-muted">
+            <p className="mt-6 max-w-lg text-[16px] leading-relaxed text-muted">
               Aurica began as a small studio in Adajan with one belief — that the bag you carry to a celebration
               should feel as special as the outfit you wear. Every piece is finished by hand: zari stitched,
               crystals set, linings checked, so that it photographs beautifully and lasts long after the
               last baraat.
             </p>
-            <div className="mt-12 grid max-w-lg grid-cols-3 border-t border-line pt-8">
+            <div className="mt-8 grid max-w-lg grid-cols-3 border-t border-line pt-6">
               {[
                 ["500+", "Designs a season"],
                 ["4.8★", "Average rating"],
@@ -274,7 +277,7 @@ export default async function Home() {
                 </div>
               ))}
             </div>
-            <Link href="/about" className="link-arrow mt-12">
+            <Link href="/about" className="link-arrow mt-8">
               More about Aurica <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </Reveal>
@@ -282,7 +285,7 @@ export default async function Home() {
       </section>
 
       {/* ───────────── CATEGORIES ───────────── */}
-      <section className="pb-24 lg:pb-32">
+      <section className="pb-16 lg:pb-20">
         <div className="container-lux">
           <Reveal className="flex items-end justify-between gap-6">
             <h2 className="h-display text-[clamp(36px,4vw,56px)]">Explore the house</h2>
@@ -290,7 +293,7 @@ export default async function Home() {
               View all <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </Reveal>
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             {categories.map((c, i) => {
               const count = all.filter((p) => p.category_id === c.id).length;
               return (
@@ -313,7 +316,7 @@ export default async function Home() {
       </section>
 
       {/* ───────────── NEW ARRIVALS ───────────── */}
-      <section className="border-t border-line py-24 lg:py-32">
+      <section className="border-t border-line py-16 lg:py-20">
         <div className="container-lux flex items-end justify-between gap-6">
           <Reveal>
             <p className="eyebrow">Just landed</p>
@@ -323,7 +326,7 @@ export default async function Home() {
             Shop new <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
-        <div className="no-scrollbar mt-12 flex snap-x gap-5 overflow-x-auto px-4 pb-2 sm:px-8 lg:px-12">
+        <div className="no-scrollbar mt-10 flex snap-x gap-5 overflow-x-auto px-4 pb-2 sm:px-8 lg:px-12">
           {fresh.map((p) => (
             <div key={p.id} className="w-[64vw] shrink-0 snap-start sm:w-[300px]">
               <ProductCard p={p} />
@@ -333,7 +336,7 @@ export default async function Home() {
       </section>
 
       {/* ───────────── WHOLESALE BAND ───────────── */}
-      <section className="container-lux pb-24 lg:pb-32">
+      <section className="container-lux pb-16 lg:pb-20">
         <Reveal className="relative grid items-center gap-10 overflow-hidden rounded-[32px] border border-line bg-cream px-8 py-12 sm:px-14 lg:grid-cols-[1.3fr_1fr] lg:py-16">
           <div>
             <p className="eyebrow text-gold-deep">Single piece & wholesale</p>
@@ -364,7 +367,7 @@ export default async function Home() {
 
       {/* ───────────── REVIEWS ───────────── */}
       {reviews.length > 0 && (
-        <section className="bg-cream/60 py-24 lg:py-32">
+        <section className="bg-cream/60 py-16 lg:py-20">
           <div className="container-lux">
             <Reveal className="text-center">
               <p className="eyebrow">Kind words</p>
@@ -398,7 +401,7 @@ export default async function Home() {
       )}
 
       {/* ───────────── INSTAGRAM ───────────── */}
-      <section className="py-24">
+      <section className="py-16 lg:py-20">
         <div className="container-lux">
           <div className="flex flex-col items-center text-center">
             <Instagram className="h-6 w-6 text-gold" strokeWidth={1.4} />

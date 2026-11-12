@@ -14,6 +14,17 @@ const PRICES = [
   { label: "₹2,500 & above", min: 2500, max: 0 },
 ];
 
+/** Header photo for each occasion edit (same looks as the homepage occasion tiles). */
+const OCCASION_IMAGE: Record<string, string> = {
+  wedding: "/images/products/gold-zari-flower-bag.webp",
+  reception: "/images/products/pearl-frame-clutch.webp",
+  sangeet: "https://images.unsplash.com/photo-1767771322982-8041f4a5da8e",
+  mehendi: "/images/insta/shell-mini-potli.webp",
+  festive: "https://images.unsplash.com/photo-1759064716592-3963a0881ff8",
+  party: "/images/products/midnight-envelope-clutch/1-black.webp",
+  everyday: "/images/products/cognac-everyday-purse/1-cognac.webp",
+};
+
 type SP = { category?: string; occasion?: string; q?: string; sort?: string; min?: string; max?: string };
 
 export default async function Shop({ searchParams }: { searchParams: Promise<SP> }) {
@@ -33,6 +44,11 @@ export default async function Shop({ searchParams }: { searchParams: Promise<SP>
   const title = cat?.name ?? (sp.occasion ? `The ${sp.occasion[0].toUpperCase()}${sp.occasion.slice(1)} Edit` : sp.q ? `“${sp.q}”` : "All Bags");
   const desc = cat?.description ?? "Clutches, potlis and handbags hand-finished for every celebration.";
 
+  // header collage: the collection's own photo, plus a bag from the results that isn't the same photo
+  const heroImage =
+    cat?.image_url ?? (sp.occasion ? OCCASION_IMAGE[sp.occasion.toLowerCase()] : undefined) ?? "/images/hero/pearl-beaded-bag.webp";
+  const sideImage = products.map((p) => p.images[0]).find((u) => u && u !== heroImage) ?? null;
+
   const href = (patch: Partial<SP>) => {
     const next = { ...sp, ...patch };
     const qs = new URLSearchParams(Object.entries(next).filter(([, v]) => v) as [string, string][]);
@@ -44,20 +60,28 @@ export default async function Shop({ searchParams }: { searchParams: Promise<SP>
   return (
     <>
       <section className="relative overflow-hidden border-b border-line">
-        <div className="container-lux grid items-end gap-8 py-16 lg:grid-cols-[1fr_auto] lg:py-24">
+        <div className="container-lux grid items-center gap-8 py-10 lg:grid-cols-[1.1fr_1fr] lg:gap-12 lg:py-12">
           <div>
             <p className="eyebrow">
               <Link href="/" className="tap">Home</Link> / Shop{cat ? ` / ${cat.name}` : ""}
             </p>
-            <h1 className="h-display mt-5 text-[clamp(48px,7vw,110px)]">{title}</h1>
-            <p className="mt-5 max-w-lg text-muted">{desc}</p>
+            <h1 className="h-display mt-4 text-[clamp(40px,5.4vw,80px)]">{title}</h1>
+            <p className="mt-4 max-w-lg text-muted">{desc}</p>
           </div>
-          {cat?.image_url && (
-            <div className="hidden h-44 w-36 overflow-hidden rounded-[18px] lg:block">
+          {/* two-photo collage: the collection's photo + a bag from it */}
+          <div className="relative hidden h-[300px] lg:block" aria-hidden>
+            <div className="absolute right-[40%] top-[6%] h-[88%] w-[56%] rounded-[22px] border border-gold/40" />
+            <div className="absolute right-[43%] top-0 h-[88%] w-[56%] overflow-hidden rounded-[22px] bg-sand shadow-[0_24px_60px_-30px_rgba(17,17,17,0.45)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(cat.image_url, 400)} alt="" className="h-full w-full object-cover" />
+              <img src={img(heroImage, 800)} alt="" className="h-full w-full object-cover" />
             </div>
-          )}
+            {sideImage && (
+              <div className="absolute bottom-0 right-0 h-[80%] w-[38%] rounded-[20px] bg-white p-1.5 shadow-[0_24px_50px_-25px_rgba(17,17,17,0.5)]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={img(sideImage, 600)} alt="" className="h-full w-full rounded-[15px] object-cover" />
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
