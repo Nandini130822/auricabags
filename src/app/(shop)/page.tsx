@@ -175,7 +175,7 @@ export default async function Home() {
             </Link>
           </Reveal>
         </div>
-        <div className="no-scrollbar mt-10 flex snap-x gap-4 overflow-x-auto px-4 pb-4 sm:px-8 lg:px-12 xl:mx-auto xl:grid xl:max-w-[1440px] xl:grid-cols-6 xl:gap-5 xl:overflow-visible xl:pb-0">
+        <div className="no-scrollbar mt-10 flex snap-x gap-4 overflow-x-auto scroll-px-4 px-4 pb-4 sm:scroll-px-8 sm:px-8 lg:scroll-px-12 lg:px-12 xl:mx-auto xl:grid xl:max-w-[1440px] xl:grid-cols-6 xl:gap-5 xl:overflow-visible xl:pb-0">
           {OCCASIONS.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80} className="shrink-0 snap-start">
               <Link href={`/shop?occasion=${o.slug}`} className="group block w-[58vw] sm:w-[240px] xl:w-auto">
@@ -326,7 +326,7 @@ export default async function Home() {
             Shop new <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
-        <div className="no-scrollbar mt-10 flex snap-x gap-5 overflow-x-auto px-4 pb-2 sm:px-8 lg:px-12">
+        <div className="no-scrollbar mt-10 flex snap-x gap-5 overflow-x-auto scroll-px-4 px-4 pb-2 sm:scroll-px-8 sm:px-8 lg:scroll-px-[max(3rem,calc((100vw_-_1440px)/2_+_3rem))] lg:px-[max(3rem,calc((100vw_-_1440px)/2_+_3rem))]">
           {fresh.map((p) => (
             <div key={p.id} className="w-[64vw] shrink-0 snap-start sm:w-[300px]">
               <ProductCard p={p} />
@@ -410,7 +410,7 @@ export default async function Home() {
             </a>
             <p className="mt-2 text-sm text-muted">Straight from our reels — tap any bag to watch it on Instagram.</p>
           </div>
-          <div className="no-scrollbar -mx-4 mt-12 flex snap-x gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4 lg:gap-5">
+          <div className="no-scrollbar -mx-4 mt-12 flex snap-x gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4 lg:gap-5">
             {REELS.map((r, i) => (
               <a
                 key={r.code}
